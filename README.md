@@ -3,6 +3,7 @@
 - Script for UPK maintenance aid
 - This github repository is OPEN SOURCE despite the fact upK is private company. It means that anybody can contribute to this repository if they produce content TO HELP this project and this company in some positeve way.
 - If you are a foreigner to upK and you still want to contribute with your pull requests, you can for example feed into the repository any info about "Cascais Shopping" (for example) in order to help the employees to navigate the terrain better.
+- This repo has 2 branches permanently under construction: main and gh-pages. The first id the branch to run inside Termux app. The second one is a secondary website for upK.
 
 # info about this repository
 ### CS folder/directory
