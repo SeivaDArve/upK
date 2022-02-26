@@ -1,8 +1,9 @@
-# upK
-- upKeeping - Script for UPK maintenance aid
-- Remember this github repository is OPEN SOURCE despite the fact upK is private company. It means that anybody can contribute to this repository if they produce content TO HELP this project and this company in some positeve way.
+# upK info
+### Facilities up-keeping
+- Script for UPK maintenance aid
+- This github repository is OPEN SOURCE despite the fact upK is private company. It means that anybody can contribute to this repository if they produce content TO HELP this project and this company in some positeve way.
 - If you are a foreigner to upK and you still want to contribute with your pull requests, you can for example feed into the repository any info about "Cascais Shopping" (for example) in order to help the employees to navigate the terrain better.
-- 
+
 # info about this repository
 ### CS folder/directory
 The content of the CS directory is dedicated to "Cascais Shopping" client. Inside you can finde some activities, scripts and employee aid
