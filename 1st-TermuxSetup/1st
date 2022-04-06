@@ -1,5 +1,5 @@
 # Apps installed:
-pkg install figlet git vim man
+pkg install figlet git vim man tput
 
 # Allow Termux to acess local storage:
 termux-setup-storage
