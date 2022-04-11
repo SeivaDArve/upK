@@ -7,3 +7,6 @@ termux-setup-storage
 # Configure Git
 git config --global user.name "upk - Seiva"
 git config --global user.email "flowreshe.seiva.d.arve@gmail.com"
+
+# Add a few functionality like "tput" by running:
+ncurses-utils
