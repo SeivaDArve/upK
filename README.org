@@ -1,3 +1,8 @@
+#+TITLE: upk website
+#+DESCRIPTION: from org-mode export to website
+#+EXPORT_FILE_NAME: ./website/exported-website-from-emacs/index.html
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+
 * upK info
 *** Facilities up-keeping
 - Script for UPK maintenance aid
@@ -8,10 +13,6 @@
 * info about this repository
 *** CS folder/directory
 The content of the CS directory is dedicated to "Cascais Shopping" client. Inside you can finde some activities, scripts and employee aid
-*** DV folder/directory
-The content of the DV directory is dedicated to "Dolce Vita" client. Inside you can finde some activities, scripts and employee aid
-*** SI folder/directory
-The content of the SI directory is dedicated to "Sonae Industria" client. Inside you can finde some activities, scripts and employee aid
 
 * Services available by upK (written in Pt-Pt)
 - AVAC
