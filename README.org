@@ -28,5 +28,7 @@ The content of the CS directory is dedicated to "Cascais Shopping" client. Insid
 - Piping aço e poliester
 - Limpeza e desobstrução de tubagens
 
+* About home.bashrc file
+It is a file that copies ~/.bashrc but it is named home.bashrc in order not to be hidden from new Linux/Bash users
 * Github Source code
 https://github.com/SeivaDArve/upK
