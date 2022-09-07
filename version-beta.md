@@ -8,3 +8,4 @@
 	1. contar-Horas-Semanais-Automaticamente.el (pra verificarboletim)
 	2. alegoritmo-Inspec-QEs.sh (app the aplica no ecra SO UMA ETAPA DE CADA VEZ para nao ser demasiada informacao)
 	3. botaoHoras-Entrada-Saida.sh (este botao é para ser clicado no ato da assinar para entrada no shopping e para saida no shopping, para que registe a hora certa escrita no papel vo Vitor15)
+	4. add "git pull" at .bashrc with a timer of 5 seconds to allow the user to cancel
