@@ -1,0 +1,6 @@
+Condition:
+   If turnos A, B, C (exist)
+   =IF(AND(ISNUMBER(SEARCH("N",A2)),ISNUMBER(SEARCH("B",A2)),ISNUMBER("C",A2))),"Ok","Falta")
+
+   Set color background to cell:
+   Home > "IF Conditioning"
