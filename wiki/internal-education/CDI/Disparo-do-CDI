@@ -1,0 +1,33 @@
+FAQ
+
+# O que significa CDI?
+ - Significa Central de Deteção dd Incêndio
+
+# Como disparar a CDI?
+ - Para simular um disparo da CDI precisamos de simular fumos com uma vara
+ - Vamos por exemplo a um restaurante com uma vara da Vigilancia e criamos fumos nos detetores do teto
+ - Quando ha auditorias, pedimos aos seguranças para la ir com umas varas
+ - No momento em que ha um alarme de incendio, caso não seja aceite o alarme, o CDI dispara
+
+# Quanto tempo é preciso ignorar o alarme de incendio para disparar o CDI?
+ - Entre 3 a 5 minutos (a confirmar)
+ - Quem tem de aceitar o alarme é a central de alarmes do shopping
+ - 1 minuto para aceitar + alguns minuyos para repor o alarme (a confirmar)
+
+# O que acontece se nao aceitarem o alarme?
+ - Começa a cair agua (se a temperatura rebentar a ampola dos sprinklers)
+ - Dispara a eletro-valvula geral do gas
+ - Dispara o AVAC
+ - Arranca a Desenfumagem
+ - As portas corta-fogo fecham
+
+# Quando as portas corta-fogo fecham, em que QE vamos re-armar os retentores magneticos das portas?
+ - Piso 1: Quadro "QTL 202 UPS" (circuito "magnetico das portas". A bobine MX)
+ - Piso 0: No "Quadro Eltrico Segurança" escondido por tras da quarta porta de madeira em frente à worten (PRECISA DAS CHAVES DA EDP)
+
+ # Onde ha alarmes de incendio?
+ - Lojas, restaurantes, mall, parques, armazens etc...
+
+# E preciso a chave da EDP para acionar as portas corta-fogo do piso 0
+
+# O PRIMEIRO procedimento a fazer assim que dispara a CDI é ir à valvula de gas, porque se nao formos la, temos de purgar o gas em todas as lojas
