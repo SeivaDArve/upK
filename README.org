@@ -30,5 +30,9 @@ The content of the CS directory is dedicated to "Cascais Shopping" client. Insid
 
 * About home.bashrc file
 It is a file that copies ~/.bashrc but it is named home.bashrc in order not to be hidden from new Linux/Bash users
+
 * Github Source code
 https://github.com/SeivaDArve/upK
+
+* Installing DRYa (for custom filesystem navigation)
+https://github.com/SeivaDArve/DRYa.git
