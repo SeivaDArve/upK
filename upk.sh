@@ -13,7 +13,7 @@ if [ -z $1 ]; then
    echo "upk: O que deseja fazer?"
    #less readme
 
-if [ -z "$*" ]; then
+elif [ -z "$*" ]; then
    # Do something else if there are no arguments
       echo "upK app: No arguments where given"
       echo "0"
@@ -27,6 +27,10 @@ elif [ $1 == "encrypt" ]; then
 
 elif [ $1 == "decrypt" ]; then
    # Misplace characters from order 1 to order 2. You may use order 2 as the readable order
+   echo
+
+elif [ $1 == "cdi" ]; then
+   vim ${v_REPOS_CENTER}/upK/wiki/internal-education/CDI/Disparo-do-CDI
 
 elif [ $1 == "1" ] && [ -z $2 ]; then
    echo 1 arg 
