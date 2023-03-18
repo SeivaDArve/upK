@@ -9,6 +9,7 @@ function f_call_drya {
 # Links para descrever todas asportas do shopping:
    alias 'PRT.C0.020'="echo \"Parque Central 0\""
 
+<<<<<<< HEAD
 if [ -z "$*" ]; then
    # open diary (stored on a separate repository) on purpose
    
@@ -31,6 +32,16 @@ if [ -z "$*" ]; then
       f_diary_help
    fi
 
+=======
+if [ -z $1 ]; then
+   echo "upk: O que deseja fazer?"
+   #less readme
+
+elif [ -z "$*" ]; then
+   # Do something else if there are no arguments
+      echo "upK app: No arguments where given"
+      echo "0"
+>>>>>>> 24eafdb80b65c0f7060c350c2ad2456921d36aa0
 elif [ $1 == "encrypt" ]; then
    # Misplace characters from order 1 to order 2. You may use order 1 as the readable order
    clear
@@ -41,12 +52,31 @@ elif [ $1 == "encrypt" ]; then
 
 elif [ $1 == "decrypt" ]; then
    # Misplace characters from order 1 to order 2. You may use order 2 as the readable order
+<<<<<<< HEAD
    echo "uDev: decrypt"
+=======
+   echo
+>>>>>>> 24eafdb80b65c0f7060c350c2ad2456921d36aa0
 
-elif [[ $1 == "1" ]]; then
-   echo 1 arg 
+elif [ $1 == "cdi" ]; then
+   vim ${v_REPOS_CENTER}/upK/wiki/internal-education/CDI/Disparo-do-CDI
 
 elif [ $1 == "1" ] && [ -z $2 ]; then
    echo 1 arg 
    echo no arg 2
+
+elif [ $1 == "img" ]; then
+
+   if [[ $2 == "planta" ]]; then
+      if [[ $3 == "cota-0" ]]; then
+         if [[ $4 == "no-guides" ]]; then
+            # xdg-open planta x
+            echo
+            #uDev: Para se poder alterar a ordem destes argumentos à vontade, convem criar um evento com flags
+         fi
+      fi
+   fi
+else
+   echo "upk: uDev: Description"
+
 fi
