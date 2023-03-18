@@ -10,9 +10,27 @@ function f_call_drya {
    alias 'PRT.C0.020'="echo \"Parque Central 0\""
 
 if [ -z "$*" ]; then
-   # Do something else if there are no arguments
-      echo "upK app: No arguments where given"
-      echo "0"
+   # open diary (stored on a separate repository) on purpose
+   
+   function f_diary_help {
+      echo "upK app: No valid arguments were given"
+      echo " > When arguments are not given,"
+      echo " > a separate repository will open (if installed)"
+      echo " > That has a daily log of actvities (user specific)"
+      echo " > If you want to use your \"account\" here"
+      echo ' > Install your text file as: ${v_REPOS_CENTER}/your-diary-name-here'
+      echo " > The standard repo is: upK-diario-Dv"
+      echo " > You can download it by: drya clone upK-diario-Dv"
+      echo " > or: https://github.com/SeivaDArve/upK-diario-Dv.git"
+   }
+   
+   # uDev: Emacs and vim can make a file if it does not exist. So existence must be verified before in order to prevent to create a new one. The file that is going to be open must exist there before
+   if [ -f ${v_REPOS_CENTER}/upK-diario-Dv/dailyLog.org ]; then
+      emacs ${v_REPOS_CENTER}/upK-diario-Dv/dailyLog.org || vim ${v_REPOS_CENTER}/upK-diario-Dv/dailyLog.org || nano ${v_REPOS_CENTER}/upK-diario-Dv/dailyLog.org 
+   else
+      f_diary_help
+   fi
+
 elif [ $1 == "encrypt" ]; then
    # Misplace characters from order 1 to order 2. You may use order 1 as the readable order
    clear
@@ -23,6 +41,7 @@ elif [ $1 == "encrypt" ]; then
 
 elif [ $1 == "decrypt" ]; then
    # Misplace characters from order 1 to order 2. You may use order 2 as the readable order
+   echo "uDev: decrypt"
 
 elif [[ $1 == "1" ]]; then
    echo 1 arg 
