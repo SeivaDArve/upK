@@ -9,7 +9,6 @@ function f_call_drya {
 # Links para descrever todas asportas do shopping:
    alias 'PRT.C0.020'="echo \"Parque Central 0\""
 
-<<<<<<< HEAD
 if [ -z "$*" ]; then
    # open diary (stored on a separate repository) on purpose
    
@@ -32,16 +31,6 @@ if [ -z "$*" ]; then
       f_diary_help
    fi
 
-=======
-if [ -z $1 ]; then
-   echo "upk: O que deseja fazer?"
-   #less readme
-
-elif [ -z "$*" ]; then
-   # Do something else if there are no arguments
-      echo "upK app: No arguments where given"
-      echo "0"
->>>>>>> 24eafdb80b65c0f7060c350c2ad2456921d36aa0
 elif [ $1 == "encrypt" ]; then
    # Misplace characters from order 1 to order 2. You may use order 1 as the readable order
    clear
