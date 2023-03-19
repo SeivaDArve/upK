@@ -41,11 +41,7 @@ elif [ $1 == "encrypt" ]; then
 
 elif [ $1 == "decrypt" ]; then
    # Misplace characters from order 1 to order 2. You may use order 2 as the readable order
-<<<<<<< HEAD
    echo "uDev: decrypt"
-=======
-   echo
->>>>>>> 24eafdb80b65c0f7060c350c2ad2456921d36aa0
 
 elif [ $1 == "cdi" ]; then
    vim ${v_REPOS_CENTER}/upK/wiki/internal-education/CDI/Disparo-do-CDI
