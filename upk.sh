@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Change this value acording to user-specific repo
+   declare v_choosen_repo="upK-diario-Dv"
+
 function f_call_drya {
 	# All software by Seiva D'Arve is connected by a 'package manager' called drya. Each app may be a simple app, but it connects to all other mainbapps. So, every app may ask drya for help. By running this function you will copy drya to your device without installing it and without modifying anything
    echo 
@@ -24,9 +27,6 @@ if [ -z "$*" ]; then
       echo " > or: https://github.com/SeivaDArve/upK-diario-Dv.git"
    }
    
-   # Change this value acording to user-specific repo
-      v_choosen_repo=upK-diario-Dv
-
    # uDev: Emacs and vim can make a file if it does not exist. So existence must be verified before in order to prevent to create a new one. The file that is going to be open must exist there before
    if [ -f ${v_REPOS_CENTER}/$v_choosen_repo/dailyLog.org ]; then
       echo "upk: opening: $v_choosen_repo"
@@ -34,6 +34,9 @@ if [ -z "$*" ]; then
    else
       f_diary_help
    fi
+
+elif [ $1 == "vim" ]; then
+      vim ${v_REPOS_CENTER}/$v_choosen_repo/dailyLog.org 
 
 elif [ $1 == "encrypt" ]; then
    # Misplace characters from order 1 to order 2. You may use order 1 as the readable order
