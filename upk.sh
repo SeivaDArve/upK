@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # Change this value acording to user-specific repo
+   # In case you are Dv (the user Dv) the repo name and location is:
    declare v_choosen_repo="upK-diario-Dv"
+   # User name (for a prety presentation):
+   declare v_nickname=Dv
 
 function f_call_drya {
 	# All software by Seiva D'Arve is connected by a 'package manager' called drya. Each app may be a simple app, but it connects to all other mainbapps. So, every app may ask drya for help. By running this function you will copy drya to your device without installing it and without modifying anything
@@ -29,7 +32,25 @@ if [ -z "$*" ]; then
    
    # uDev: Emacs and vim can make a file if it does not exist. So existence must be verified before in order to prevent to create a new one. The file that is going to be open must exist there before
    if [ -f ${v_REPOS_CENTER}/$v_choosen_repo/dailyLog.org ]; then
+      clear
+      figlet UPK
+      echo "Repository exists"
+      echo " > ${v_REPOS_CENTER}/$v_choosen_repo/"
+      echo
+      echo "For the user:"
+      echo " > $v_nickname"
+      echo 
+      echo "Files exists"
+      cd ${v_REPOS_CENTER}/$v_choosen_repo/
+      git status 
+      echo
+      echo "Upload all changes (with ezGIT if installed) with:"
+      echo " > G upk ^"
+      echo
+      sleep 3
       echo "upk: opening: $v_choosen_repo"
+      sleep 2
+
       emacs ${v_REPOS_CENTER}/$v_choosen_repo/dailyLog.org || vim ${v_REPOS_CENTER}/upK-diario-Dv/dailyLog.org || nano ${v_REPOS_CENTER}/upK-diario-Dv/dailyLog.org 
    else
       f_diary_help
