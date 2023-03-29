@@ -32,6 +32,7 @@ if [ -z "$*" ]; then
    
    # uDev: Emacs and vim can make a file if it does not exist. So existence must be verified before in order to prevent to create a new one. The file that is going to be open must exist there before
    if [ -f ${v_REPOS_CENTER}/$v_choosen_repo/dailyLog.org ]; then
+      # If file exists, then:
       clear
       figlet UPK
       echo "Repository exists"
@@ -40,11 +41,18 @@ if [ -z "$*" ]; then
       echo "For the user:"
       echo " > $v_nickname"
       echo 
-      echo "Files exists"
+      echo "Files exist"
       cd ${v_REPOS_CENTER}/$v_choosen_repo/
+      echo "Git pulling (downloading)"
+      git pull
+      echo
+      echo "Git status:"
       git status 
       echo
-      echo "Upload all changes (with ezGIT if installed) with:"
+      echo "After edition if the files, they will be automatically uploaded"
+      echo "With: git push"
+      echo
+      echo "Or manually with:"
       echo " > G upk ^"
       echo
       sleep 3
@@ -52,6 +60,11 @@ if [ -z "$*" ]; then
       sleep 2
 
       emacs ${v_REPOS_CENTER}/$v_choosen_repo/dailyLog.org || vim ${v_REPOS_CENTER}/upK-diario-Dv/dailyLog.org || nano ${v_REPOS_CENTER}/upK-diario-Dv/dailyLog.org 
+      echo "Git pushing:"
+      git push
+      echo
+      echo "git status:"
+      git status
    else
       f_diary_help
    fi
