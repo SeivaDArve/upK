@@ -1,10 +1,14 @@
 #!/bin/bash
 
-# Change this value acording to user-specific repo
+# Change these values according to user-specific repos/infos/choosen nick/choosen files to make use of
    # In case you are Dv (the user Dv) the repo name and location is:
-   declare v_choosen_repo="upK-diario-Dv"
+      declare v_choosen_repo="upK-diario-Dv"
+
    # User name (for a prety presentation):
-   declare v_nickname=Dv
+      declare v_nickname="Dv"
+
+   # Chosen file to edit whitin the repo:
+      declare v_choosen_file="dailyLog.org"
 
 function f_call_drya {
 	# All software by Seiva D'Arve is connected by a 'package manager' called drya. Each app may be a simple app, but it connects to all other mainbapps. So, every app may ask drya for help. By running this function you will copy drya to your device without installing it and without modifying anything
@@ -18,60 +22,71 @@ function f_call_drya {
 if [ -z "$*" ]; then
    # open diary (stored on a separate repository) on purpose
    
-   function f_diary_help {
-      echo "upK app: No valid arguments were given"
-      echo " > When arguments are not given,"
-      echo " > a separate repository will open (if installed)"
-      echo " > That has a daily log of actvities (user specific)"
-      echo " > If you want to use your \"account\" here"
-      echo ' > Install your text file as: ${v_REPOS_CENTER}/your-diary-name-here'
-      echo " > The standard repo is: upK-diario-Dv"
-      echo " > You can download it by: drya clone upK-diario-Dv"
-      echo " > or: https://github.com/SeivaDArve/upK-diario-Dv.git"
-   }
+   # Funtion that will run in case this repository "upK" does not find an external user repository (like the one upK-diario-Dv)
+      function f_diary_help {
+         echo "upK app: No valid arguments were given"
+         echo " > When arguments are not given,"
+         echo " > a separate repository will open (if installed)"
+         echo " > That has a daily log of actvities (user specific)"
+         echo " > If you want to use your \"account\" here"
+         echo ' > Install your text file as: ${v_REPOS_CENTER}/your-diary-name-here'
+         echo " > The standard repo is: upK-diario-Dv"
+         echo " > You can download it by: drya clone upK-diario-Dv"
+         echo " > or: https://github.com/SeivaDArve/upK-diario-Dv.git"
+      }
    
-   # uDev: Emacs and vim can make a file if it does not exist. So existence must be verified before in order to prevent to create a new one. The file that is going to be open must exist there before
-   if [ -f ${v_REPOS_CENTER}/$v_choosen_repo/dailyLog.org ]; then
-      # If file exists, then:
-      clear
-      figlet UPK
-      echo "Repository exists"
-      echo " > ${v_REPOS_CENTER}/$v_choosen_repo/"
-      echo
-      echo "For the user:"
-      echo " > $v_nickname"
-      echo 
-      echo "Files exist"
-      cd ${v_REPOS_CENTER}/$v_choosen_repo/
-      echo "Git pulling (downloading)"
-      git pull
-      echo
-      echo "Git status:"
-      git status 
-      echo
-      echo "After edition if the files, they will be automatically uploaded"
-      echo "With: git push"
-      echo
-      echo "Or manually with:"
-      echo " > G upk ^"
-      echo
-      sleep 3
-      echo "upk: opening: $v_choosen_repo"
-      sleep 2
+   # Function that will run in case this repository "upk" does find an external user repo with his personal dily log info
+      function f_diary_master {
+         # uDev: Emacs and vim can make a file if it does not exist. 
+            #So existence must be verified with -f before, in order to prevent to create a new one. 
+            #The file that is going to be open must exist there before
 
-      emacs ${v_REPOS_CENTER}/$v_choosen_repo/dailyLog.org || vim ${v_REPOS_CENTER}/upK-diario-Dv/dailyLog.org || nano ${v_REPOS_CENTER}/upK-diario-Dv/dailyLog.org 
-      echo "Adding all to git and Automatic commit:"
-      echo " > Automatic git commit"
+         clear
+         figlet UPK
+         echo "User Repository exists whit the name:"
+         echo " > ${v_REPOS_CENTER}/$v_choosen_repo/"
+         echo
+         echo "For the user:"
+         echo " > $v_nickname"
+         echo 
+         echo "File choosen for edition:"
+         echo " > ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file"
+         cd ${v_REPOS_CENTER}/$v_choosen_repo/
+         echo "Git pulling (downloading)"
+         git pull
+         echo
+         echo "Git status:"
+         git status 
+         echo
+         echo "After edition if the files, they will be automatically uploaded"
+         echo "With: git push"
+         echo
+         echo "Or manually with:"
+         echo " > G upk ^"
+         echo
+         sleep 3
+         echo "upk: opening: $v_choosen_repo"
+         sleep 2
 
-      git add --all
-      git commit -m "ezGIT: Automatic git add --all; git commit; git push"
-      echo -n "Git pushing: "
-      git push
-      echo " > Done"
-      echo -n "git status: "
-      git status
+         emacs ${v_REPOS_CENTER}/$v_choosen_repo/dailyLog.org || vim ${v_REPOS_CENTER}/upK-diario-Dv/dailyLog.org || nano ${v_REPOS_CENTER}/upK-diario-Dv/dailyLog.org 
+         echo "Adding all to git and Automatic commit:"
+         echo " > Automatic git commit"
+
+         git add --all
+         git commit -m "ezGIT: Automatic git add --all; git commit; git push"
+         echo -n "Git pushing: "
+         git push
+         echo " > Done"
+         echo -n "git status: "
+         git status
+      }
+
+   if [ -f ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file ]; then
+      # If file $v_choosen_repo exists, then:
+         f_diary_master
    else
-      f_diary_help
+      # If file $v_choosen_repo does not exist, then:
+         f_diary_help
    fi
 
 elif [ $1 == "vim" ]; then
