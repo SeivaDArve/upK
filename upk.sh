@@ -51,35 +51,59 @@ if [ -z "$*" ]; then
          echo 
          echo "File choosen for edition:"
          echo " > ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file"
-         cd ${v_REPOS_CENTER}/$v_choosen_repo/
-         echo "Git pulling (downloading)"
-         git pull
          echo
-         echo "Git status:"
-         git status 
+         echo "You are asking to edit the file $v_choosen_repo"
+         echo " To edit the latest version, we will check for updates:"
+         echo " > git pull (downloading with no output to the sceen)"
+            cd ${v_REPOS_CENTER}/$v_choosen_repo/
+            git pull 1>/dev/null && echo " > Success!"
          echo
-         echo "After edition if the files, they will be automatically uploaded"
-         echo "With: git push"
+         echo "Showing it's git status:"
+         echo " > git status"
+            git status 
+         echo
+         echo "After edition if the files, they will be automatically uploaded with:"
+         echo " > git push"
          echo
          echo "Or manually with:"
          echo " > G upk ^"
          echo
          sleep 3
-         echo "upk: opening: $v_choosen_repo"
+         echo "upk: opening:"
+         echo " >  $v_choosen_repo"
+         echo
          sleep 2
-
-         emacs ${v_REPOS_CENTER}/$v_choosen_repo/dailyLog.org || vim ${v_REPOS_CENTER}/upK-diario-Dv/dailyLog.org || nano ${v_REPOS_CENTER}/upK-diario-Dv/dailyLog.org 
-         echo "Adding all to git and Automatic commit:"
-         echo " > Automatic git commit"
-
-         git add --all
-         git commit -m "ezGIT: Automatic git add --all; git commit; git push"
-         echo -n "Git pushing: "
-         git push
-         echo " > Done"
-         echo -n "git status: "
-         git status
       }
+
+         function f_file_closed {
+            # Run this function only if we are sure the file was opened
+            echo "upk: file closed:" 
+            echo " >  $v_choosen_repo"
+            echo
+            echo "Starting upldoad sequence..."
+            echo
+            echo "Automatically adding all files to be commited:"
+            echo " > git add --all"
+               git add --all && " > Success!"
+            echo
+            echo "Commiting all files with the message:":
+            echo " > ezGIT: Automatic git add --all; git commit; git push"
+               git commit -m "ezGIT: Automatic git add --all; git commit; git push" && echo " > Success!"
+            echo
+            echo "Uploading files with:"
+            echo " > git push"
+               git push && echo " > Success!"
+            echo 
+            echo -n "Showing the status of the repository with: "
+            echo " > git status"
+            git status && echo "Success!"
+         }
+
+         # Try opening the file with the text editors available:
+            emacs ${v_REPOS_CENTER}/$v_choosen_repo/$_v_choosen_file && f_file_closed \
+            || vim ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && f_file_closed \
+            || nano ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && f_file_closed
+
 
    if [ -f ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file ]; then
       # If file $v_choosen_repo exists, then:
