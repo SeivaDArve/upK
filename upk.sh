@@ -100,9 +100,9 @@ if [ -z "$*" ]; then
          }
 
          # Try opening the file with the text editors available:
-            emacs ${v_REPOS_CENTER}/$v_choosen_repo/$_v_choosen_file && f_file_closed \
-            || vim ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && f_file_closed \
-            || nano ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && f_file_closed
+            emacs ${v_REPOS_CENTER}/$v_choosen_repo/$_v_choosen_file && f_file_closed #\
+            #|| vim ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && f_file_closed \
+            #|| nano ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && f_file_closed
 
 
    if [ -f ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file ]; then
