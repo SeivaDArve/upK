@@ -60,10 +60,15 @@ if [ -z "$*" ]; then
       sleep 2
 
       emacs ${v_REPOS_CENTER}/$v_choosen_repo/dailyLog.org || vim ${v_REPOS_CENTER}/upK-diario-Dv/dailyLog.org || nano ${v_REPOS_CENTER}/upK-diario-Dv/dailyLog.org 
-      echo "Git pushing:"
+      echo "Adding all to git and Automatic commit:"
+      echo " > Automatic git commit"
+
+      git add --all
+      git commit -m "ezGIT: Automatic git add --all; git commit; git push"
+      echo -n "Git pushing: "
       git push
-      echo
-      echo "git status:"
+      echo " > Done"
+      echo -n "git status: "
       git status
    else
       f_diary_help
