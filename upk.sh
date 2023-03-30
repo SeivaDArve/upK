@@ -34,15 +34,44 @@ if [ -z "$*" ]; then
          echo " > You can download it by: drya clone upK-diario-Dv"
          echo " > or: https://github.com/SeivaDArve/upK-diario-Dv.git"
       }
+
+   # Run this function only AFTER editing the file that was successfully opened
+      function f_file_closed {
+         echo "upk: file closed:" 
+         echo " > $v_choosen_repo/$v_choosen_file"
+         echo
+         echo "Starting upldoad sequence..."
+         sleep 1
+         echo
+         echo "Automatically adding all files to be commited:"
+         echo " > git add --all"
+            git add --all && echo " > Success!"
+         echo
+         echo "Commiting all files with the message:":
+         echo " > ezGIT: Automatic git add --all; git commit; git push"
+            git commit -m "ezGIT: Automatic git add --all; git commit; git push" && echo " > Success!"
+         echo
+         echo "Uploading files with:"
+         echo " > git push"
+            git push && echo " > Success!"
+         echo 
+         echo -n "Showing the status of the repository with: "
+         echo " > git status"
+            git status && echo "Success!"
+      }
    
-   # Function that will run in case this repository "upk" does find an external user repo with his personal dily log info
+   # Run this function only BEFORE editing the file that has the need to be in sync with multiple devices
       function f_diary_master {
-         # uDev: Emacs and vim can make a file if it does not exist. 
-            #So existence must be verified with -f before, in order to prevent to create a new one. 
-            #The file that is going to be open must exist there before
+         # Function that will run in case this repository "upk" does find an external user repo with his personal dily log info
+
+         # Emacs and vim can make a file if it does not exist. 
+            # So it's existence must be verified with -f before, in order to prevent to create a new one. 
+            # The file that is going to be open must exist there before
+            # If -f finds a file, this function will run
 
          clear
          figlet UPK
+
          echo "User Repository exists whit the name:"
          echo " > ${v_REPOS_CENTER}/$v_choosen_repo/"
          echo
@@ -73,36 +102,22 @@ if [ -z "$*" ]; then
          echo " >  $v_choosen_repo"
          echo
          sleep 2
-      }
-
-         function f_file_closed {
-            # Run this function only if we are sure the file was opened
-            echo "upk: file closed:" 
-            echo " >  $v_choosen_repo"
-            echo
-            echo "Starting upldoad sequence..."
-            echo
-            echo "Automatically adding all files to be commited:"
-            echo " > git add --all"
-               git add --all && " > Success!"
-            echo
-            echo "Commiting all files with the message:":
-            echo " > ezGIT: Automatic git add --all; git commit; git push"
-               git commit -m "ezGIT: Automatic git add --all; git commit; git push" && echo " > Success!"
-            echo
-            echo "Uploading files with:"
-            echo " > git push"
-               git push && echo " > Success!"
-            echo 
-            echo -n "Showing the status of the repository with: "
-            echo " > git status"
-            git status && echo "Success!"
-         }
 
          # Try opening the file with the text editors available:
-            emacs ${v_REPOS_CENTER}/$v_choosen_repo/$_v_choosen_file && f_file_closed #\
-            #|| vim ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && f_file_closed \
-            #|| nano ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && f_file_closed
+
+         # If windows with graphical interface is available, we will prefer that to the terminal version
+            if [ -f /mnt/c/Program\ Files/Emacs/x86_64/bin/emacs.exe ]; then
+               # if .exe is found, open GUI emacs on windows:
+                  /mnt/c/Program\ Files/Emacs/x86_64/bin/emacs.exe $v_choosen_file && echo -e "File closed\n" && f_file_closed
+
+            else
+               # Otherwise, open emacs in terminal:
+                  emacs ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && echo -e "File closed\n" && f_file_closed #\
+                  #|| vim ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && f_file_closed \
+                  #|| nano ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && f_file_closed
+            fi
+      }
+
 
 
    if [ -f ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file ]; then
