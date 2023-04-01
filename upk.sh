@@ -97,11 +97,9 @@ if [ -z "$*" ]; then
          echo "Or manually with:"
          echo " > G upk ^"
          echo
-         sleep 3
          echo "upk: opening:"
          echo " >  $v_choosen_repo"
          echo
-         sleep 2
 
          # Try opening the file with the text editors available:
 
