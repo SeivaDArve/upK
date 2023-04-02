@@ -82,7 +82,9 @@ if [ -z "$*" ]; then
          echo " > ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file"
          echo
          echo "You are asking to edit the file $v_choosen_repo"
-         echo " To edit the latest version, we will check for updates:"
+         echo " > To edit the latest version, we will check for updates:"
+         echo
+         echo "Starting download sequence:"
          echo " > git pull (downloading with no output to the sceen)"
             cd ${v_REPOS_CENTER}/$v_choosen_repo/
             git pull 1>/dev/null && echo " > Success!"
@@ -128,7 +130,7 @@ if [ -z "$*" ]; then
          f_diary_help
    fi
 
-elif [ $1 == "vim" ]; then
+elif [[ $1 == "vim" ]]; then
       vim ${v_REPOS_CENTER}/$v_choosen_repo/dailyLog.org 
 
 elif [ $1 == "encrypt" ]; then
