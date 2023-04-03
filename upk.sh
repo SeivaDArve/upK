@@ -99,19 +99,24 @@ if [ -z "$*" ]; then
          echo "Or manually with:"
          echo " > G upk ^"
          echo
-         echo "upk: opening:"
-         echo " >  $v_choosen_repo"
-         echo
 
          # Try opening the file with the text editors available:
 
          # If windows with graphical interface is available, we will prefer that to the terminal version
             if [ -f /mnt/c/Program\ Files/Emacs/x86_64/bin/emacs.exe ]; then
                # if .exe is found, open GUI emacs on windows:
+                  echo "upk: opening file (in GUI windows):"
+                  echo " >  $v_choosen_repo"
+                  echo
+
                   /mnt/c/Program\ Files/Emacs/x86_64/bin/emacs.exe $v_choosen_file && echo -e "File closed\n" && f_file_closed
 
             else
                # Otherwise, open emacs in terminal:
+                  echo "upk: opening file (in Terminal Linux):"
+                  echo " >  $v_choosen_repo"
+                  echo
+
                   emacs ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && echo -e "File closed\n" && f_file_closed #\
                   #|| vim ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && f_file_closed \
                   #|| nano ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && f_file_closed
