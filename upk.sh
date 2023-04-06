@@ -15,9 +15,31 @@ function f_call_drya {
    echo 
 }
 
-
 # Links para descrever todas asportas do shopping:
    alias 'PRT.C0.020'="echo \"Parque Central 0\""
+
+function f_c1 {
+   # Defining a color number 1
+   tput setaf 4
+}
+
+function f_c2 {
+   # Defining a color number 1
+   tput setaf 6
+}
+
+function f_c3 {
+   # Defining a color number 1
+   tput setaf 5
+}
+
+function f_cr {
+   # Defining 'reset color'
+   tput sgr0
+}
+
+#f_c1; echo hi; f_cr; echo sh
+#read
 
 if [ -z "$*" ]; then
    # open diary (stored on a separate repository) on purpose
@@ -37,27 +59,28 @@ if [ -z "$*" ]; then
 
    # Run this function only AFTER editing the file that was successfully opened
       function f_file_closed {
-         echo "upk: file closed:" 
+         f_c1; echo "upk: file closed:" ; f_cr
          echo " > $v_choosen_repo/$v_choosen_file"
          echo
-         echo "Starting upldoad sequence..."
+         f_c2; echo "Starting upldoad sequence..."; f_cr
          sleep 1
          echo
-         echo "Automatically adding all files to be commited:"
+         f_c1; echo "Automatically adding all files to be commited:"; f_cr
          echo " > git add --all"
             git add --all && echo " > Success!"
          echo
-         echo "Commiting all files with the message:":
-         echo " > ezGIT: Automatic git add --all; git commit; git push"
-            git commit -m "ezGIT: Automatic git add --all; git commit; git push" && echo " > Success!"
+         f_c1; echo "Commiting all files with the message:":; f_cr
+         echo " > Starting: automatic git add --all; git commit; git push"
+            f_c3; git commit -m "ezGIT: Automatic git add --all; git commit; git push" && f_cr && echo " > Success!"
          echo
-         echo "Uploading files with:"
-         echo " > git push"
-            git push && echo " > Success!"
+         f_c1; echo "Uploading files with:"; f_cr
+         echo " > git push:"
+            echo
+            f_c3; git push && f_cr && echo " > Success!"
          echo 
-         echo -n "Showing the status of the repository with: "
-         echo " > git status"
-            git status && echo "Success!"
+         f_c1; echo "Showing the status of the repository with: "; f_cr
+         echo " > git status:"
+            f_c3; git status && f_cr && echo " > Success!"
       }
    
    # Run this function only BEFORE editing the file that has the need to be in sync with multiple devices
@@ -72,31 +95,31 @@ if [ -z "$*" ]; then
          clear
          figlet UPK
 
-         echo "User Repository exists whit the name:"
+         f_c1; echo "User Repository exists whit the name:"; f_cr
          echo " > ${v_REPOS_CENTER}/$v_choosen_repo/"
          echo
-         echo "For the user:"
+         f_c1; echo "For the user:"; f_cr
          echo " > $v_nickname"
          echo 
-         echo "File choosen for edition:"
+         f_c1; echo "File choosen for edition:"; f_cr
          echo " > ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file"
          echo
-         echo "You are asking to edit the file $v_choosen_repo"
+         f_c1; echo "You are asking to edit the file $v_choosen_repo"; f_cr
          echo " > To edit the latest version, we will check for updates:"
          echo
-         echo "Starting download sequence:"
-         echo " > git pull (downloading with no output to the sceen)"
+         f_c1; echo "Starting download sequence:"; f_cr
+         echo " > git pull: "
             cd ${v_REPOS_CENTER}/$v_choosen_repo/
-            git pull 1>/dev/null && echo " > Success!"
+            f_c3; git pull && f_cr && echo " > Success!"
          echo
-         echo "Showing it's git status:"
-         echo " > git status"
-            git status 
+         f_c1; echo "Showing it's git status now:"; f_cr
+         echo " > git status:"
+            f_c3; git status ; f_cr
          echo
-         echo "After edition if the files, they will be automatically uploaded with:"
+         f_c1; echo "After edition if the files, they will be automatically uploaded with:"; f_cr
          echo " > git push"
          echo
-         echo "Or manually with:"
+         f_c1; echo "Or manually with:"; f_cr
          echo " > G upk ^"
          echo
 
@@ -105,19 +128,19 @@ if [ -z "$*" ]; then
          # If windows with graphical interface is available, we will prefer that to the terminal version
             if [ -f /mnt/c/Program\ Files/Emacs/x86_64/bin/emacs.exe ]; then
                # if .exe is found, open GUI emacs on windows:
-                  echo "upk: opening file (in GUI windows):"
-                  echo " >  $v_choosen_repo"
+                  f_c1; echo "upk: Opening file (in GUI windows):"; f_cr
+                  echo " >  $v_choosen_repo/$v_choosen_file"
                   echo
 
-                  /mnt/c/Program\ Files/Emacs/x86_64/bin/emacs.exe $v_choosen_file && echo -e "File closed\n" && f_file_closed
+                  /mnt/c/Program\ Files/Emacs/x86_64/bin/emacs.exe $v_choosen_file && f_c2 && echo -e "File closed\n" && f_cr && f_file_closed
 
             else
                # Otherwise, open emacs in terminal:
-                  echo "upk: opening file (in Terminal Linux):"
-                  echo " >  $v_choosen_repo"
+                  f_c1; echo "upk: Opening file (in Terminal Linux):"; f_cr
+                  echo " >  $v_choosen_repo/$v_choosen_file"
                   echo
 
-                  emacs ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && echo -e "File closed\n" && f_file_closed #\
+                  emacs ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && f_c2 && echo -e "File closed\n" && f_cr && f_file_closed #\
                   #|| vim ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && f_file_closed \
                   #|| nano ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && f_file_closed
             fi
