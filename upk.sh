@@ -111,6 +111,7 @@ if [ -z "$*" ]; then
          echo " > git pull: "
             cd ${v_REPOS_CENTER}/$v_choosen_repo/
             f_c3; git pull && f_cr && echo " > Success!"
+            echo " >> uDev: If git pull is rejected, the process should ask if we still want the file to open"
          echo
          f_c1; echo "Showing it's git status now:"; f_cr
          echo " > git status:"
