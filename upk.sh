@@ -124,6 +124,11 @@ if [ -z "$*" ]; then
          echo " > G upk ^"
          echo
 
+         function f_warning_for_trigger {
+            echo " >> uDev: A trigger can be added before opening"
+            echo " >>       In order for this file to be open only in one device"
+            echo " >>       At the same time"
+         }
          # Try opening the file with the text editors available:
 
          # If windows with graphical interface is available, we will prefer that to the terminal version
@@ -131,6 +136,7 @@ if [ -z "$*" ]; then
                # if .exe is found, open GUI emacs on windows:
                   f_c1; echo "upk: Opening file (in GUI windows):"; f_cr
                   echo " >  $v_choosen_repo/$v_choosen_file"
+                  f_warning_for_trigger
                   echo
 
                   /mnt/c/Program\ Files/Emacs/x86_64/bin/emacs.exe $v_choosen_file && f_c2 && echo -e "File closed\n" && f_cr && f_file_closed
@@ -139,6 +145,7 @@ if [ -z "$*" ]; then
                # Otherwise, open emacs in terminal:
                   f_c1; echo "upk: Opening file (in Terminal Linux):"; f_cr
                   echo " >  $v_choosen_repo/$v_choosen_file"
+                  f_warning_for_trigger
                   echo
 
                   emacs ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && f_c2 && echo -e "File closed\n" && f_cr && f_file_closed #\
