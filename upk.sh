@@ -59,7 +59,7 @@ if [ -z "$*" ]; then
 
    # Run this function only AFTER editing the file that was successfully opened
       function f_file_closed {
-         f_c1; echo "upk: file closed:" ; f_cr
+         f_c1; echo "File closed:" ; f_cr
          echo " > $v_choosen_repo/$v_choosen_file"
          echo
          f_c2; echo "Starting upldoad sequence..."; f_cr
@@ -81,6 +81,11 @@ if [ -z "$*" ]; then
          f_c1; echo "Showing the status of the repository with: "; f_cr
          echo " > git status:"
             f_c3; git status && f_cr && echo " > Success!"
+         echo
+         f_c1; echo "This file adited by the app 'upk' closed at:"; f_cr
+         v_date_now=$(date)
+         echo " > $v_date_now"
+         echo
       }
    
    # Run this function only BEFORE editing the file that has the need to be in sync with multiple devices
@@ -95,6 +100,13 @@ if [ -z "$*" ]; then
          clear
          figlet UPK
 
+         f_c1; echo "Time now is: "; f_cr
+         v_date_now=$(date)
+         echo " > $v_date_now"
+         echo
+         f_c1; echo "Note about this app 'upk': "; f_cr
+         echo " > Any file this app opens is external and you can config to open your own"
+         echo
          f_c1; echo "User Repository exists whit the name:"; f_cr
          echo " > ${v_REPOS_CENTER}/$v_choosen_repo/"
          echo
@@ -105,9 +117,9 @@ if [ -z "$*" ]; then
          echo " > ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file"
          echo
          f_c1; echo "You are asking to edit the file $v_choosen_repo"; f_cr
-         echo " > To edit the latest version, we will check for updates:"
+         echo " > To edit the latest version, we will check for updates"
          echo
-         f_c1; echo "Starting download sequence:"; f_cr
+         f_c1; echo "Starting download sequence (updating):"; f_cr
          echo " > git pull: "
             cd ${v_REPOS_CENTER}/$v_choosen_repo/
             f_c3; git pull && f_cr && echo " > Success!"
@@ -117,7 +129,7 @@ if [ -z "$*" ]; then
          echo " > git status:"
             f_c3; git status ; f_cr
          echo
-         f_c1; echo "After edition if the files, they will be automatically uploaded with:"; f_cr
+         f_c1; echo "After editin the files, they will be automatically uploaded with:"; f_cr
          echo " > git push"
          echo
          f_c1; echo "Or manually with:"; f_cr
@@ -128,13 +140,16 @@ if [ -z "$*" ]; then
             echo " >> uDev: A trigger can be added before opening"
             echo " >>       In order for this file to be open only in one device"
             echo " >>       At the same time"
+            echo 
+            f_c2; echo -e "File opening ... "; f_cr
+            
          }
          # Try opening the file with the text editors available:
 
          # If windows with graphical interface is available, we will prefer that to the terminal version
             if [ -f /mnt/c/Program\ Files/Emacs/x86_64/bin/emacs.exe ]; then
                # if .exe is found, open GUI emacs on windows:
-                  f_c1; echo "upk: Opening file (in GUI windows):"; f_cr
+                  f_c1; echo "Opening file (in GUI windows):"; f_cr
                   echo " >  $v_choosen_repo/$v_choosen_file"
                   f_warning_for_trigger
                   echo
@@ -143,7 +158,7 @@ if [ -z "$*" ]; then
 
             else
                # Otherwise, open emacs in terminal:
-                  f_c1; echo "upk: Opening file (in Terminal Linux):"; f_cr
+                  f_c1; echo "Opening file (in Terminal Linux):"; f_cr
                   echo " >  $v_choosen_repo/$v_choosen_file"
                   f_warning_for_trigger
                   echo
