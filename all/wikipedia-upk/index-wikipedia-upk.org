@@ -1,0 +1,56 @@
+#+TITLE: Wikipedia para UPK (cascais shopping)
+#+DESCRIPTION: Primeiro ficheiro da wikipedia sobre a upk. Apartir deste ficheiro, tens acesso a todos os outros via links ou menus
+
+Next: Introduction   [Contents][Index]
+
+[[file:ficheiro-1-teste.org][Teste-link-entre-ficheiros]] (É possivel moviementar-se entre ficheiros, mas é prefirivel escrever tudo num so ficheir e deixar que seja exportado para html de forma que pareção varios ficheiros diferentes)
+
+* Wikipedia para UPK (cascais shopping)
+Este manual está a ser escrito e desenvolvido por: David
+ - tecnico Eletricista (Mike 1)
+ - programador: bash, python, elsip
+ 
+
+* Table of Contents
+Exemplo (retirado do Org manual. uDev: Substituir por conteudo do shopping):
+Sorce do exemplo: https://orgmode.org/org.html#Introduction
+Exemplo de TOC:
+
+This is the official manual for the latest Org mode release.
+
+1 Introduction
+1.1 Summary
+1.2 Installation
+1.3 Activation
+1.4 Feedback
+1.5 Typesetting Conventions Used in this Manual
+2 Document Structure
+2.1 Headlines
+2.2 Visibility Cycling
+2.2.1 Global and local cycling
+2.2.2 Initial visibility
+2.2.3 Catching invisible edits
+2.3 Motion
+2.4 Structure Editing
+2.5 Sparse Trees
+2.6 Plain Lists
+2.7 Drawers
+2.8 Blocks
+
+* 1 Introdução
+Sumario
+Descrição do shopping
+Activation
+Feedback
+Typesetting Conventions Used in this Manual
+
+Next: Installation, Up: Introduction   [Contents][Index]
+
+* <<1.1>> Summary
+Org Mode is an authoring tool and a TODO lists manager for GNU Emacs. It relies on a lightweight plain-text markup language used in files with the ‘.org’ extension.
+
+As an authoring tool, Org helps you write structured documents and provides exporting facilities. Org files can also be used for literate programming and reproducible research. As a TODO lists manager, Org helps you organize your tasks in a flexible way, from daily needs to detailed project-planning, allowing logging, multiple views on your tasks, exporting your agendas, etc.
+* <<1.2>> Descrição do Shopping
+O Cascais Shopping tem uma zona comercial e tem parque de estacionamento, zonas de residuos, Areas tecnicas, Corredore
+* <<1.2.1>> Corredores tecnicos
+Como este documento é só um ficheiro de apoio, aos procediementos que ja existem no shopping, é possivel que a informação que se procura aqui seja melhor ser consultada no PC da Gestão porque talvez lá esteja mais atualizado. Por esse motivo, este topico vai conter a informação mais recente até à data da ultima atualização e também vai ter um tutorial de como ir buscar a mesma informação ao PC da gestão para estarmos a par com os engenheiros do shopping que fazem mudanças no shopping e que não sabem da existencia DESTE fucheiro

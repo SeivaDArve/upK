@@ -1,0 +1,35 @@
+* Menu (uDev: para sair e substituir pela introducao)
+
+Pagina Inicial: [[file:c:/Repositories/upK/index-wikipwdia-upk.org][Index]]
+- Menu a que pertence este ficheio: nil
+  - proximo Ficheiro:  nil
+  - Ficheiro anterior: nil
+- Link absoluto deste ficheiro: [[file:ficheiro-1-teste.org][ficheiro-1-teste.org (me)]]
+
+
+<<< (repete este menu no inicio e no fim da pagina) >>>
+(dv (ou-entao (usa (source:  https://emacs.stackexchange.com/questions/54937/split-every-single-org-headline-in-a-org-file-to-separate-md-org-files)))
+-------------------------------------------------------
+
+* Conteúdo da pagina:
+
+- Ficheiro 1 de teste, se visitaste este ficheiro é porque o teste correu bem 
+- Convem que os ficheiros sejam escritos em Org-Mode para haver links interativos para navegar de volta
+
+- Para criares links interativos no emacs usa: 'C-c C-l'
+  - passo 1: C-c C-l
+  - passo 2: TAB parar os tipos de links disponiveis (neste caso 'file')
+  - passo 3: file path to link
+  - passo 4: Adicionar uma descrição (texto que vai ficar visivel e sublinhado <<texto-link-1>> como hiperlink a azul
+
+- Para criares links de dentro do proprio ficheiro tipo: [[texto-link-1]]
+  - passo 1: definir texto que vai ser seguido por varios links com << >> tipo <<exemplo-de-link>>
+  - passo 2: apontar noutras partes do ficheiro para qual exemplo queremos ir com ]] [[ tipo: [[exemplo-de-link]]
+  - passo 3: para editar o link caso algo esteja errado, basta 'C-c C-l' em qualquer ponto com o cursor por cima do link
+  
+
+* Menu 
+-------------------------------------------------------    
+<<< (repete este menu no inicio e no fim da pagina) >>>
+
+
