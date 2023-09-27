@@ -82,7 +82,7 @@ if [ -z "$*" ]; then
          echo " > git status:"
             f_c3; git status && f_cr && echo " > Success!"
          echo
-         f_c1; echo "This file adited by the app 'upk' closed at:"; f_cr
+         f_c1; echo "This file edited by the app 'upk' closed at:"; f_cr
          v_date_now=$(date)
          echo " > $v_date_now"
          echo
