@@ -107,7 +107,7 @@ if [ -z "$*" ]; then
          f_c1; echo "Note about this app 'upk': "; f_cr
          echo " > Any file this app opens is external and you can config to open your own"
          echo
-         f_c1; echo "User Repository exists whit the name:"; f_cr
+         f_c1; echo "User Repository exists with the name:"; f_cr
          echo " > ${v_REPOS_CENTER}/$v_choosen_repo/"
          echo
          f_c1; echo "For the user:"; f_cr
@@ -116,16 +116,18 @@ if [ -z "$*" ]; then
          f_c1; echo "File choosen for edition:"; f_cr
          echo " > ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file"
          echo
-         f_c1; echo "You are asking to edit the file $v_choosen_repo"; f_cr
-         echo " > To edit the latest version, we will check for updates"
+         f_c1; echo "You are asking to edit the main file at: $v_choosen_repo"; f_cr
+         echo " > And to edit the latest version, we will check for updates on github.com"
          echo
          f_c1; echo "Starting download sequence (updating):"; f_cr
          echo " > git pull: "
             cd ${v_REPOS_CENTER}/$v_choosen_repo/
             f_c3; git pull && f_cr && echo " > Success!"
-            echo " >> uDev: If git pull is rejected, the process should ask if we still want the file to open"
+            echo
+            echo " >> uDev: If git pull is rejected (downloading updates)"
+            echo "          this script should ask if we still want the file to open"
          echo
-         f_c1; echo "Showing it's git status now:"; f_cr
+         f_c1; echo "Showing current git status:"; f_cr
          echo " > git status:"
             f_c3; git status ; f_cr
          echo
@@ -137,9 +139,17 @@ if [ -z "$*" ]; then
          echo
 
          function f_warning_for_trigger {
-            echo " >> uDev: A trigger can be added before opening"
-            echo " >>       In order for this file to be open only in one device"
-            echo " >>       At the same time"
+            echo " >> uDev: A trigger should be added before opening"
+            echo " >>         In order to allow the choice for this file to be "
+            echo " >>         open only in one device at the same time"
+            echo " >> "
+            echo " >>       Before opening:"
+            echo " >>         send the trigger/info to github.com telling"
+            echo " >>         Which device and repo is currently if the file open"
+            echo " >>         Then the user chooses whether or not to open the file anyway"
+            echo " >> " 
+            echo " >>       After closing:"
+            echo " >>         removes the trigger/info from github.com"
             echo 
             f_c2; echo -e "File opening ... "; f_cr
             
@@ -160,6 +170,7 @@ if [ -z "$*" ]; then
                # Otherwise, open emacs in terminal:
                   f_c1; echo "Opening file (in Terminal Linux):"; f_cr
                   echo " >  $v_choosen_repo/$v_choosen_file"
+                  echo
                   f_warning_for_trigger
                   echo
 
