@@ -33,12 +33,12 @@ function f_c3 {
    tput setaf 5
 }
 
-function f_cr {
+function f_rc {
    # Defining 'reset color'
    tput sgr0
 }
 
-#f_c1; echo hi; f_cr; echo sh
+#f_c1; echo hi; f_rc; echo sh
 #read
 
 if [ -z "$*" ]; then
@@ -59,30 +59,30 @@ if [ -z "$*" ]; then
 
    # Run this function only AFTER editing the file that was successfully opened
       function f_file_closed {
-         f_c1; echo "File closed:" ; f_cr
+         f_c1; echo "File closed:" ; f_rc
          echo " > $v_choosen_repo/$v_choosen_file"
          echo
-         f_c2; echo "Starting upldoad sequence..."; f_cr
+         f_c2; echo "Starting upldoad sequence..."; f_rc
          sleep 1
          echo
-         f_c1; echo "Automatically adding all files to be commited:"; f_cr
+         f_c1; echo "Automatically adding all files to be commited:"; f_rc
          echo " > git add --all"
             git add --all && echo " > Success!"
          echo
-         f_c1; echo "Commiting all files with the message:":; f_cr
+         f_c1; echo "Commiting all files with the message:":; f_rc
          echo " > Starting: automatic git add --all; git commit; git push"
-            f_c3; git commit -m "ezGIT: Automatic git add --all; git commit; git push" && f_cr && echo " > Success!"
+            f_c3; git commit -m "ezGIT: Automatic git add --all; git commit; git push" && f_rc && echo " > Success!"
          echo
-         f_c1; echo "Uploading files with:"; f_cr
+         f_c1; echo "Uploading files with:"; f_rc
          echo " > git push:"
             echo
-            f_c3; git push && f_cr && echo " > Success!"
+            f_c3; git push && f_rc && echo " > Success!"
          echo 
-         f_c1; echo "Showing the status of the repository with: "; f_cr
+         f_c1; echo "Showing the status of the repository with: "; f_rc
          echo " > git status:"
-            f_c3; git status && f_cr && echo " > Success!"
+            f_c3; git status && f_rc && echo " > Success!"
          echo
-         f_c1; echo "This file edited by the app 'upk' closed at:"; f_cr
+         f_c1; echo "This file edited by the app 'upk' closed at:"; f_rc
          v_date_now=$(date)
          echo " > $v_date_now"
          echo
@@ -100,41 +100,41 @@ if [ -z "$*" ]; then
          clear
          figlet UPK
 
-         f_c1; echo "Time now is: "; f_cr
+         f_c1; echo "Time now is: "; f_rc
          v_date_now=$(date)
          echo " > $v_date_now"
          echo
-         f_c1; echo "Note about this app 'upk': "; f_cr
+         f_c1; echo "Note about this app 'upk': "; f_rc
          echo " > Any file this app opens is external and you can config to open your own"
          echo
-         f_c1; echo "User Repository exists with the name:"; f_cr
+         f_c1; echo "User Repository exists with the name:"; f_rc
          echo " > ${v_REPOS_CENTER}/$v_choosen_repo/"
          echo
-         f_c1; echo "For the user:"; f_cr
+         f_c1; echo "For the user:"; f_rc
          echo " > $v_nickname"
          echo 
-         f_c1; echo "File choosen for edition:"; f_cr
+         f_c1; echo "File choosen for edition:"; f_rc
          echo " > ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file"
          echo
-         f_c1; echo "You are asking to edit the main file at: $v_choosen_repo"; f_cr
+         f_c1; echo "You are asking to edit the main file at: $v_choosen_repo"; f_rc
          echo " > And to edit the latest version, we will check for updates on github.com"
          echo
-         f_c1; echo "Starting download sequence (updating):"; f_cr
+         f_c1; echo "Starting download sequence (updating):"; f_rc
          echo " > git pull: "
             cd ${v_REPOS_CENTER}/$v_choosen_repo/
-            f_c3; git pull && f_cr && echo " > Success!"
+            f_c3; git pull && f_rc && echo " > Success!"
             echo
             echo " >> uDev: If git pull is rejected (downloading updates)"
             echo "          this script should ask if we still want the file to open"
          echo
-         f_c1; echo "Showing current git status:"; f_cr
+         f_c1; echo "Showing current git status:"; f_rc
          echo " > git status:"
-            f_c3; git status ; f_cr
+            f_c3; git status ; f_rc
          echo
-         f_c1; echo "After editin the files, they will be automatically uploaded with:"; f_cr
+         f_c1; echo "After editin the files, they will be automatically uploaded with:"; f_rc
          echo " > git push"
          echo
-         f_c1; echo "Or manually with:"; f_cr
+         f_c1; echo "Or manually with:"; f_rc
          echo " > G upk ^"
          echo
 
@@ -151,7 +151,7 @@ if [ -z "$*" ]; then
             echo " >>       After closing:"
             echo " >>         removes the trigger/info from github.com"
             echo 
-            f_c2; echo -e "File opening ... "; f_cr
+            f_c2; echo -e "File opening ... "; f_rc
             
          }
          # Try opening the file with the text editors available:
@@ -159,22 +159,22 @@ if [ -z "$*" ]; then
          # If windows with graphical interface is available, we will prefer that to the terminal version
             if [ -f /mnt/c/Program\ Files/Emacs/x86_64/bin/emacs.exe ]; then
                # if .exe is found, open GUI emacs on windows:
-                  f_c1; echo "Opening file (in GUI windows):"; f_cr
+                  f_c1; echo "Opening file (in GUI windows):"; f_rc
                   echo " >  $v_choosen_repo/$v_choosen_file"
                   f_warning_for_trigger
                   echo
 
-                  /mnt/c/Program\ Files/Emacs/x86_64/bin/emacs.exe $v_choosen_file && f_c2 && echo -e "File closed\n" && f_cr && f_file_closed
+                  /mnt/c/Program\ Files/Emacs/x86_64/bin/emacs.exe $v_choosen_file && f_c2 && echo -e "File closed\n" && f_rc && f_file_closed
 
             else
                # Otherwise, open emacs in terminal:
-                  f_c1; echo "Opening file (in Terminal Linux):"; f_cr
+                  f_c1; echo "Opening file (in Terminal Linux):"; f_rc
                   echo " >  $v_choosen_repo/$v_choosen_file"
                   echo
                   f_warning_for_trigger
                   echo
 
-                  emacs ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && f_c2 && echo -e "File closed\n" && f_cr && f_file_closed #\
+                  emacs ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && f_c2 && echo -e "File closed\n" && f_rc && f_file_closed #\
                   #|| vim ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && f_file_closed \
                   #|| nano ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && f_file_closed
             fi
