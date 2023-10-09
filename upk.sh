@@ -10,16 +10,17 @@
    # Chosen file to edit whitin the repo:
       declare v_choosen_file="dailyLog.org"
 
+   # Name of repo to sync (by ezGIT)
+      v_sync_name="UPK"
+
 function f_call_drya {
 	# All software by Seiva D'Arve is connected by a 'package manager' called drya. Each app may be a simple app, but it connects to all other mainbapps. So, every app may ask drya for help. By running this function you will copy drya to your device without installing it and without modifying anything
    echo 
 }
 
-# Links para descrever todas asportas do shopping:
-   alias 'PRT.C0.020'="echo \"Parque Central 0\""
-
 function f_c1 {
    # Defining a color number 1
+   # Used by: f_talk 
    tput setaf 4
 }
 
@@ -38,8 +39,17 @@ function f_rc {
    tput sgr0
 }
 
-#f_c1; echo hi; f_rc; echo sh
-#read
+# After colors are defined, create a "Face" for each "ezGIT:
+   function f_talk {
+      f_c1
+      echo -n "ezGIT: "; f_rc; # ... Text descriptor af
+   }
+
+# After each ezGIT function finishes, say "done"
+   function f_done {
+      echo
+      f_talk; echo "Done!"
+}
 
 if [ -z "$*" ]; then
    # open diary (stored on a separate repository) on purpose
@@ -85,7 +95,7 @@ if [ -z "$*" ]; then
          f_c1; echo "This file edited by the app 'upk' closed at:"; f_rc
          v_date_now=$(date)
          echo " > $v_date_now"
-         echo
+
       }
    
    # Run this function only BEFORE editing the file that has the need to be in sync with multiple devices
@@ -98,7 +108,7 @@ if [ -z "$*" ]; then
             # If -f finds a file, this function will run
 
          clear
-         figlet UPK
+         figlet $v_sync_name
 
          f_c1; echo "Time now is: "; f_rc
          v_date_now=$(date)
