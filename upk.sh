@@ -176,7 +176,7 @@ if [ -z "$*" ]; then
                   f_warning_for_trigger
                   echo
 
-                  /mnt/c/Program\ Files/Emacs/x86_64/bin/emacs.exe $v_choosen_file && f_c2 && echo -e "File closed\n" && f_rc && f_file_closed
+                  /mnt/c/Program\ Files/Emacs/x86_64/bin/emacs.exe $v_choosen_file && f_c2 && echo -e "... File closed\n" && f_rc && f_file_closed
 
             else
                # Otherwise, open emacs in terminal:
@@ -186,7 +186,7 @@ if [ -z "$*" ]; then
                   f_warning_for_trigger
                   echo
 
-                  emacs ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && f_c2 && echo -e "File closed\n" && f_rc && f_file_closed #\
+                  emacs ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && f_c2 && echo -e "... File closed\n" && f_rc && f_file_closed #\
                   #|| vim ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && f_file_closed \
                   #|| nano ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && f_file_closed
             fi
