@@ -1,4 +1,95 @@
-****** Tipos de OTs no SIIGO (com abreviaturas)
+#+TITLE: Tipos de OTs no SIIGO (com abreviaturas)
+#+STARTUP: indent
+
+(Tem instruções no funcdo da pagina)
+
+--- AVAC -----------------------------------------------------------------------
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(gt) Comando de iluminação/AVAC através da GTC  - Técnico")(other-window -1)(kill-buffer)(delete-window))][gt]])       > Comando de iluminação/AVAC através da GTC  - Técnico
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(0) Intervenções em VCs das lojas - piso 0 - Técnico")(other-window -1)(kill-buffer)(delete-window))][0]])        > Intervenções em VCs das lojas - piso 0 - Técnico
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(1) Intervenções em VCs das lojas - piso 1 - Técnico")(other-window -1)(kill-buffer)(delete-window))][1]])        > Intervenções em VCs das lojas - piso 1 - Técnico     
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(s de av) Trabalhos diversos de AVAC - Técnico")(other-window -1)(kill-buffer)(delete-window))][s de av]])  > Trabalhos diversos de AVAC - Técnico    
+
+
+--- Acompanhaments, Testes & Contagens -----------------------------------------
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(os ex) Apoio a empreiteiros exteriores")(other-window -1)(kill-buffer)(delete-window))][os ex]])    > Apoio a empreiteiros exteriores      
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(as ex) Apoio de empresas exteriores")(other-window -1)(kill-buffer)(delete-window))][as ex]])    > Apoio de empresas exteriores      
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(fl) Contagem de Energia e Fluidos - Técnico")(other-window -1)(kill-buffer)(delete-window))][fl]])       > Contagem de Energia e Fluidos - Técnico         
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(a em L) Contagem de energia em lojas - Técnico")(other-window -1)(kill-buffer)(delete-window))][a em L]])   > Contagem de energia em lojas - Técnico     
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(che) Verificação de cheiros (gás, esgotos, etc) - Produto")(other-window -1)(kill-buffer)(delete-window))][che]])      > Verificação de cheiros (gás, esgotos, etc) - Produto        
+
+--- Apoio ao Marketing ---------------------------------------------------------
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(temp) Apoio a stands temporários - Produto")(other-window -1)(kill-buffer)(delete-window))][temp]])     > Apoio a stands temporários - Produto       
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(mar) Apoio ao Marketing/Eventos - Produto")(other-window -1)(kill-buffer)(delete-window))][mar]])      > Apoio ao Marketing/Eventos - Produto        
+
+--- Construção Civil -----------------------------------------------------------
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(calc) Reparação/Substituição de pedras da calçada - Produto")(other-window -1)(kill-buffer)(delete-window))][calc]])     > Reparação/Substituição de pedras da calçada - Produto       
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(pin) Trabalhos de pintura no centro e parques - Produto")(other-window -1)(kill-buffer)(delete-window))][pin]])      > Trabalhos de pintura no centro e parques - Produto        
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(cons) Trabalhos diversos de construção civil - Produto")(other-window -1)(kill-buffer)(delete-window))][cons]])     > Trabalhos diversos de construção civil - Produto       
+
+--- Eletricidade ---------------------------------------------------------------
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(bl) Intervenções em blocos autónomos - Técnico")(other-window -1)(kill-buffer)(delete-window))][bl]])       > Intervenções em blocos autónomos - Técnico         
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(lig) Ligar/Desligar Iluminação Exterior - Técnico")(other-window -1)(kill-buffer)(delete-window))][lig]])      > Ligar/Desligar Iluminação Exterior - Técnico        
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(os em l) Pequenos trabalhos eléctricos em lojas - Técnico")(other-window -1)(kill-buffer)(delete-window))][os em l]])  > Pequenos trabalhos eléctricos em lojas - Técnico    
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(atm) Rearme e pequenos trabalhos em ATM - Produto")(other-window -1)(kill-buffer)(delete-window))][atm]])      > Rearme e pequenos trabalhos em ATM - Produto        
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(res - c) Rearme/Desarme de disjuntores - Centro e Parques - Técnico")(other-window -1)(kill-buffer)(delete-window))][res - c]])  > Rearme/Desarme de disjuntores - Centro e Parques - Técnico    
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(res e) Rearme/Desarme de disjuntores em lojas - Técnico")(other-window -1)(kill-buffer)(delete-window))][res e]])    > Rearme/Desarme de disjuntores em lojas - Técnico      
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(of) Reparações eléctricas em oficina - Técnico")(other-window -1)(kill-buffer)(delete-window))][of]])       > Reparações eléctricas em oficina - Técnico         
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(eme) Subst. Lâmpadas/Outros Trab - Ilum. Emergência - Produto")(other-window -1)(kill-buffer)(delete-window))][eme]])      > Subst. Lâmpadas/Outros Trab - Ilum. Emergência - Produto        
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(nor) Subst. Lâmpadas/Outros Trab - Ilum. Normal - Produto")(other-window -1)(kill-buffer)(delete-window))][nor]])      > Subst. Lâmpadas/Outros Trab - Ilum. Normal - Produto        
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(os no) Trabalhos eléctricos no centro e parques - Técnico")(other-window -1)(kill-buffer)(delete-window))][os no]])    > Trabalhos eléctricos no centro e parques - Técnico      
+
+--- Gás ------------------------------------------------------------------------
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(gas e) Fecho/abertura de gás em lojas - Técnico")(other-window -1)(kill-buffer)(delete-window))][gas e]])    > Fecho/abertura de gás em lojas - Técnico      
+
+--- Infiltrações ---------------------------------------------------------------
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(oes em l) Infiltrações em lojas - Técnico")(other-window -1)(kill-buffer)(delete-window))][oes em l]]) > Infiltrações em lojas - Técnico   
+
+--- Meios Eletromecânicos de Transporte ----------------------------------------
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(vad) Intervenções Várias - Elevadores - Produto")(other-window -1)(kill-buffer)(delete-window))][vad]])      > Intervenções Várias - Elevadores - Produto        
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(tap) Intervenções Várias - Escadas/Tapetes - Produto")(other-window -1)(kill-buffer)(delete-window))][tap]])      > Intervenções Várias - Escadas/Tapetes - Produto        
+
+--- Outros ---------------------------------------------------------------------
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(sh) Intervenções em Shop Spots - Produto")(other-window -1)(kill-buffer)(delete-window))][sh]])       > Intervenções em Shop Spots - Produto         
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(ins) Intervenções várias - Instalações Sanitárias - Produto")(other-window -1)(kill-buffer)(delete-window))][ins]])      > Intervenções várias - Instalações Sanitárias - Produto
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(exti) Intervenções várias em equipamentos de extinção de incêndios - Técnico")(other-window -1)(kill-buffer)(delete-window))][exti]])     > Intervenções várias em equipamentos de extinção de incêndios - Técnico
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(za d) Limpeza de áreas Técnicas - Técnico")(other-window -1)(kill-buffer)(delete-window))][za d]])     > Limpeza de áreas Técnicas - Técnico
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(loji) Outro Tipo de Apoio a Lojistas - Técnico")(other-window -1)(kill-buffer)(delete-window))][loji]])     > Outro Tipo de Apoio a Lojistas - Técnico       
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(reu) Preparação trabalhos, reuniões de manutenção, etc - Técnico")(other-window -1)(kill-buffer)(delete-window))][reu]])      > Preparação trabalhos, reuniões de manutenção, etc - Técnico
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(vig) Reparações de equipamentos da Segurança/Vigilância - Técnico")(other-window -1)(kill-buffer)(delete-window))][vig]])      > Reparações de equipamentos da Segurança/Vigilância - Técnico
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(resi) Reparações de equipamentos de tratamento de resíduos")(other-window -1)(kill-buffer)(delete-window))][resi]])     > Reparações de equipamentos de tratamento de resíduos       
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(ser) Trabalhos de Serralharia - Técnico")(other-window -1)(kill-buffer)(delete-window))][ser]])      > Trabalhos de Serralharia - Técnico        
+
+--- Parque de Estacionamento ---------------------------------------------------
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(oes no) Infiltrações no Centro/Parque - Técnico")(other-window -1)(kill-buffer)(delete-window))][oes no]])   > Infiltrações no Centro/Parque - Técnico     
+
+--- Portas e Portões -----------------------------------------------------------
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(tica) Intervenções em portas automáticas - Produto")(other-window -1)(kill-buffer)(delete-window))][tica]])     > Intervenções em portas automáticas - Produto       
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(cort) Intervenções em portas corta-fogo - Técnico")(other-window -1)(kill-buffer)(delete-window))][cort]])     > Intervenções em portas corta-fogo - Técnico       
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(alu) Intervenções em portas de aluminio e de vidro entrada - Produto")(other-window -1)(kill-buffer)(delete-window))][alu]])      > Intervenções em portas de aluminio e de vidro entrada - Produto
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(ger) Intervenções em portas gerais - Produto")(other-window -1)(kill-buffer)(delete-window))][ger]])      > Intervenções em portas gerais - Produto        
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(vai) Intervenções em portas vai-vem - Técnico")(other-window -1)(kill-buffer)(delete-window))][vai]])      > Intervenções em portas vai-vem - Técnico        
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(gr) Intervenções em portas/gradeamentos das lojas - Técnico")(other-window -1)(kill-buffer)(delete-window))][gr]])       > Intervenções em portas/gradeamentos das lojas - Técnico         
+
+--- Transporte de Materiais Diversos -------------------------------------------
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(ais d) Transporte de Materiais Diversos")(other-window -1)(kill-buffer)(delete-window))][ais d]])    > Transporte de Materiais Diversos      
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(pl) Transporte de plataformas elevatórias")(other-window -1)(kill-buffer)(delete-window))][pl]])       > Transporte de plataformas elevatórias         
+
+--- Aguas ----------------------------------------------------------------------
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(valv) Abertura/Fecho de válvulas da rede de incêndios - Técnico")(other-window -1)(kill-buffer)(delete-window))][valv]])     > Abertura/Fecho de válvulas da rede de incêndios - Técnico       
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(ho de a) Abertura/Fecho de água  - Técnico")(other-window -1)(kill-buffer)(delete-window))][ho de a]])  > Abertura/Fecho de água  - Técnico 
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(tanq) Desentupimento de tanques dos corredores técnicos - Técnico")(other-window -1)(kill-buffer)(delete-window))][tanq]])     > Desentupimento de tanques dos corredores técnicos - Técnico
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(dom) Intervenções na bombagem de esgotos domésticos - Técnico")(other-window -1)(kill-buffer)(delete-window))][dom]])      > Intervenções na bombagem de esgotos domésticos - Técnico        
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(plu) Intervenções na bombagem de esgotos pluviais - Técnico")(other-window -1)(kill-buffer)(delete-window))][plu]])      > Intervenções na bombagem de esgotos pluviais - Técnico        
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(reg) Intervenções na central de bombagem-Rede de água da rega - Técnico")(other-window -1)(kill-buffer)(delete-window))][reg]])      > Intervenções na central de bombagem-Rede de água da rega - Técnico        
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(a de av) Intervenções na central de bombagem-Rede de água de avac - Técnico")(other-window -1)(kill-buffer)(delete-window))][a de av]])  > Intervenções na central de bombagem-Rede de água de avac - Técnico    
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(a de i) Intervenções na central de bombagem-Rede de água de incêndios - Técnico")(other-window -1)(kill-buffer)(delete-window))][a de i]])   > Intervenções na central de bombagem-Rede de água de incêndios - Técnico     
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(pota) Intervenções na central de bombagem-Rede de água potável - Técnico")(other-window -1)(kill-buffer)(delete-window))][pota]])     > Intervenções na central de bombagem-Rede de água potável - Técnico       
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(spr) Intervenções na rede de sprinklers das lojas - Técnico")(other-window -1)(kill-buffer)(delete-window))][spr]])      > Intervenções na rede de sprinklers das lojas - Técnico        
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(leit) Leituras/Pequenas reparações do sistema de tratamento de águas - Técnico")(other-window -1)(kill-buffer)(delete-window))][leit]])     > Leituras/Pequenas reparações do sistema de tratamento de águas - Técnico       
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(leir) Limpeza/Desentupimento de esgotos/ralos/caleiras - Técnico")(other-window -1)(kill-buffer)(delete-window))][leir]])     > Limpeza/Desentupimento de esgotos/ralos/caleiras - Técnico       
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(sos n) Trabalhos diversos na rede de incêndios - Técnico"")(other-window -1)(kill-buffer)(delete-window))][sos n]])    > Trabalhos diversos na rede de incêndios - Técnico      
+
+* Instruções
 Fx: dv-print-siigo-ot-type       ;; Print text in another buffer open in another window by clicking the links and closes this one buffer
 Fx: <<dv-insert-siigo-ot-type>>  ;; Inser text in current buffer in another line, opening a new window and then closing
 Fx: dv-paste-siigo-ot-type       ;; Just past the whole text list of OTs in the current cursor position (uDev)
@@ -14,93 +105,4 @@ Fx: udev: criar Fx para cada abreviatura, para ser automaticamente introduzido o
 
   Usa a função: dv-print-siigo-ot-type no scratch buffer para imprimir as varias abreviaturas para cada topico
                 Esta função cola o texto inteiro sobre os tipos de OT, experimenta no scratch-buffer
-
-
----------------------------------------------------------------------------------------------------------------
-
---- AVAC ---
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Comando de iluminação/AVAC através da GTC  - Técnico")(other-window -1)(kill-buffer)(delete-window))][gt]])       > Comando de iluminação/AVAC através da GTC  - Técnico
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Intervenções em VCs das lojas - piso 0 - Técnico")(other-window -1)(kill-buffer)(delete-window))][o 0]])      > Intervenções em VCs das lojas - piso 0 - Técnico
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Intervenções em VCs das lojas - piso 1 - Técnico")(other-window -1)(kill-buffer)(delete-window))][o 1]])      > Intervenções em VCs das lojas - piso 1 - Técnico     
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Trabalhos diversos de AVAC - Técnico")(other-window -1)(kill-buffer)(delete-window))][s de av]])  > Trabalhos diversos de AVAC - Técnico    
-
-
---- Acompanhaments, Testes & Contagens ---
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Apoio a empreiteiros exteriores")(other-window -1)(kill-buffer)(delete-window))][os ex]])    > Apoio a empreiteiros exteriores      
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Apoio de empresas exteriores")(other-window -1)(kill-buffer)(delete-window))][as ex]])    > Apoio de empresas exteriores      
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Contagem de Energia e Fluidos - Técnico")(other-window -1)(kill-buffer)(delete-window))][fl]])       > Contagem de Energia e Fluidos - Técnico         
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Contagem de energia em lojas - Técnico")(other-window -1)(kill-buffer)(delete-window))][a em L]])   > Contagem de energia em lojas - Técnico     
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Verificação de cheiros (gás, esgotos, etc) - Produto")(other-window -1)(kill-buffer)(delete-window))][che]])      > Verificação de cheiros (gás, esgotos, etc) - Produto        
-
---- Apoio ao Marketing ---
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Apoio a stands temporários - Produto")(other-window -1)(kill-buffer)(delete-window))][temp]])     > Apoio a stands temporários - Produto       
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Apoio ao Marketing/Eventos - Produto")(other-window -1)(kill-buffer)(delete-window))][mar]])      > Apoio ao Marketing/Eventos - Produto        
-
---- Construção Civil ---
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Reparação/Substituição de pedras da calçada - Produto")(other-window -1)(kill-buffer)(delete-window))][calc]])     > Reparação/Substituição de pedras da calçada - Produto       
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Trabalhos de pintura no centro e parques - Produto")(other-window -1)(kill-buffer)(delete-window))][pin]])      > Trabalhos de pintura no centro e parques - Produto        
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Trabalhos diversos de construção civil - Produto")(other-window -1)(kill-buffer)(delete-window))][cons]])     > Trabalhos diversos de construção civil - Produto       
-
---- Eletricidade ---
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Intervenções em blocos autónomos - Técnico")(other-window -1)(kill-buffer)(delete-window))][bl]])       > Intervenções em blocos autónomos - Técnico         
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Ligar/Desligar Iluminação Exterior - Técnico")(other-window -1)(kill-buffer)(delete-window))][lig]])      > Ligar/Desligar Iluminação Exterior - Técnico        
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Pequenos trabalhos eléctricos em lojas - Técnico")(other-window -1)(kill-buffer)(delete-window))][os em l]])  > Pequenos trabalhos eléctricos em lojas - Técnico    
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Rearme e pequenos trabalhos em ATM - Produto")(other-window -1)(kill-buffer)(delete-window))][atm]])      > Rearme e pequenos trabalhos em ATM - Produto        
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Rearme/Desarme de disjuntores - Centro e Parques - Técnico")(other-window -1)(kill-buffer)(delete-window))][res - c]])  > Rearme/Desarme de disjuntores - Centro e Parques - Técnico    
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Rearme/Desarme de disjuntores em lojas - Técnico")(other-window -1)(kill-buffer)(delete-window))][res e]])    > Rearme/Desarme de disjuntores em lojas - Técnico      
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Reparações eléctricas em oficina - Técnico")(other-window -1)(kill-buffer)(delete-window))][of]])       > Reparações eléctricas em oficina - Técnico         
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Subst. Lâmpadas/Outros Trab - Ilum. Emergência - Produto")(other-window -1)(kill-buffer)(delete-window))][eme]])      > Subst. Lâmpadas/Outros Trab - Ilum. Emergência - Produto        
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Subst. Lâmpadas/Outros Trab - Ilum. Normal - Produto")(other-window -1)(kill-buffer)(delete-window))][nor]])      > Subst. Lâmpadas/Outros Trab - Ilum. Normal - Produto        
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Trabalhos eléctricos no centro e parques - Técnico")(other-window -1)(kill-buffer)(delete-window))][os no]])    > Trabalhos eléctricos no centro e parques - Técnico      
-
---- Gás ---
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Fecho/abertura de gás em lojas - Técnico")(other-window -1)(kill-buffer)(delete-window))][gas e]])    > Fecho/abertura de gás em lojas - Técnico      
-
---- Infiltrações ---
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Infiltrações em lojas - Técnico")(other-window -1)(kill-buffer)(delete-window))][oes em l]]) > Infiltrações em lojas - Técnico   
-
---- Meios Eletromecânicos de Transporte ---
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Intervenções Várias - Elevadores - Produto")(other-window -1)(kill-buffer)(delete-window))][vad]])      > Intervenções Várias - Elevadores - Produto        
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Intervenções Várias - Escadas/Tapetes - Produto")(other-window -1)(kill-buffer)(delete-window))][tap]])      > Intervenções Várias - Escadas/Tapetes - Produto        
-
---- Outros ---
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Intervenções em Shop Spots - Produto")(other-window -1)(kill-buffer)(delete-window))][sh]])       > Intervenções em Shop Spots - Produto         
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Intervenções várias - Instalações Sanitárias - Produto")(other-window -1)(kill-buffer)(delete-window))][ins]])      > Intervenções várias - Instalações Sanitárias - Produto
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Intervenções várias em equipamentos de extinção de incêndios - Técnico")(other-window -1)(kill-buffer)(delete-window))][exti]])
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Limpeza de áreas Técnicas - Técnico")(other-window -1)(kill-buffer)(delete-window))][za d]])     > Limpeza de áreas Técnicas - Técnico
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Outro Tipo de Apoio a Lojistas - Técnico")(other-window -1)(kill-buffer)(delete-window))][loji]])     > Outro Tipo de Apoio a Lojistas - Técnico       
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Preparação trabalhos, reuniões de manutenção, etc - Técnico")(other-window -1)(kill-buffer)(delete-window))][reu]])      > Preparação trabalhos, reuniões de manutenção, etc - Técnico
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Reparações de equipamentos da Segurança/Vigilância - Técnico")(other-window -1)(kill-buffer)(delete-window))][vig]])      > Reparações de equipamentos da Segurança/Vigilância - Técnico        
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Reparações de equipamentos de tratamento de resíduos")(other-window -1)(kill-buffer)(delete-window))][resi]])     > Reparações de equipamentos de tratamento de resíduos       
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Trabalhos de Serralharia - Técnico")(other-window -1)(kill-buffer)(delete-window))][ser]])      > Trabalhos de Serralharia - Técnico        
-
---- Parque de Estacionamento ---
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Infiltrações no Centro/Parque - Técnico")(other-window -1)(kill-buffer)(delete-window))][oes no]])   > Infiltrações no Centro/Parque - Técnico     
-
---- Portas e Portões ---
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Intervenções em portas automáticas - Produto")(other-window -1)(kill-buffer)(delete-window))][tica]])     > Intervenções em portas automáticas - Produto       
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Intervenções em portas corta-fogo - Técnico")(other-window -1)(kill-buffer)(delete-window))][cort]])     > Intervenções em portas corta-fogo - Técnico       
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Intervenções em portas de aluminio e de vidro entrada - Produto")(other-window -1)(kill-buffer)(delete-window))][alu]])      > Intervenções em portas de aluminio e de vidro entrada - Produto        
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Intervenções em portas gerais - Produto")(other-window -1)(kill-buffer)(delete-window))][ger]])      > Intervenções em portas gerais - Produto        
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Intervenções em portas vai-vem - Técnico")(other-window -1)(kill-buffer)(delete-window))][vai]])      > Intervenções em portas vai-vem - Técnico        
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Intervenções em portas/gradeamentos das lojas - Técnico")(other-window -1)(kill-buffer)(delete-window))][gr]])       > Intervenções em portas/gradeamentos das lojas - Técnico         
-
---- Transporte de Materiais Diversos ---
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Transporte de Materiais Diversos")(other-window -1)(kill-buffer)(delete-window))][ais d]])    > Transporte de Materiais Diversos      
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Transporte de plataformas elevatórias")(other-window -1)(kill-buffer)(delete-window))][pl]])       > Transporte de plataformas elevatórias         
-
---- Águas ---
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Abertura/Fecho de válvulas da rede de incêndios - Técnico")(other-window -1)(kill-buffer)(delete-window))][valv]])     > Abertura/Fecho de válvulas da rede de incêndios - Técnico       
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Abertura/Fecho de água  - Técnico")(other-window -1)(kill-buffer)(delete-window))][ho de a]])  > Abertura/Fecho de água  - Técnico 
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Desentupimento de tanques dos corredores técnicos - Técnico")(other-window -1)(kill-buffer)(delete-window))][tanq]])     > Desentupimento de tanques dos corredores técnicos - Técnico       
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Intervenções na bombagem de esgotos domésticos - Técnico")(other-window -1)(kill-buffer)(delete-window))][dom]])      > Intervenções na bombagem de esgotos domésticos - Técnico        
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Intervenções na bombagem de esgotos pluviais - Técnico")(other-window -1)(kill-buffer)(delete-window))][plu]])      > Intervenções na bombagem de esgotos pluviais - Técnico        
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Intervenções na central de bombagem-Rede de água da rega - Técnico")(other-window -1)(kill-buffer)(delete-window))][reg]])      > Intervenções na central de bombagem-Rede de água da rega - Técnico        
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Intervenções na central de bombagem-Rede de água de avac - Técnico")(other-window -1)(kill-buffer)(delete-window))][a de av]])  > Intervenções na central de bombagem-Rede de água de avac - Técnico    
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Intervenções na central de bombagem-Rede de água de incêndios - Técnico")(other-window -1)(kill-buffer)(delete-window))][a de i]])   > Intervenções na central de bombagem-Rede de água de incêndios - Técnico     
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Intervenções na central de bombagem-Rede de água potável - Técnico")(other-window -1)(kill-buffer)(delete-window))][pota]])     > Intervenções na central de bombagem-Rede de água potável - Técnico       
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Intervenções na rede de sprinklers das lojas - Técnico")(other-window -1)(kill-buffer)(delete-window))][spr]])      > Intervenções na rede de sprinklers das lojas - Técnico        
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Leituras/Pequenas reparações do sistema de tratamento de águas - Técnico")(other-window -1)(kill-buffer)(delete-window))][leit]])     > Leituras/Pequenas reparações do sistema de tratamento de águas - Técnico       
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Limpeza/Desentupimento de esgotos/ralos/caleiras - Técnico")(other-window -1)(kill-buffer)(delete-window))][leir]])     > Limpeza/Desentupimento de esgotos/ralos/caleiras - Técnico       
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Trabalhos diversos na rede de incêndios - Técnico"")(other-window -1)(kill-buffer)(delete-window))][sos n]])    > Trabalhos diversos na rede de incêndios - Técnico      
 
