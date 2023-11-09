@@ -90,6 +90,9 @@
  > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(sos n) Trabalhos diversos na rede de incêndios - Técnico"")(other-window -1)(kill-buffer)(delete-window))][sos n]])    > Trabalhos diversos na rede de incêndios - Técnico      
 
 * Instruções
+
+[[elisp:(beginning-of-buffer)][Topo]] da pagina
+
 Fx: dv-print-siigo-ot-type       ;; Print text in another buffer open in another window by clicking the links and closes this one buffer
 Fx: <<dv-insert-siigo-ot-type>>  ;; Inser text in current buffer in another line, opening a new window and then closing
 Fx: dv-paste-siigo-ot-type       ;; Just past the whole text list of OTs in the current cursor position (uDev)
