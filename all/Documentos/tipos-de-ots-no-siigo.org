@@ -1,7 +1,7 @@
 #+TITLE: Tipos de OTs no SIIGO (com abreviaturas)
 #+STARTUP: indent
 
-(Tem instruções no funcdo da pagina)
+(Pode [[elisp:(progn (kill-buffer) (delete-window))][fechar]] esta página ou ver as [[Instruções][instruções]] no fundo)
 
 --- AVAC -----------------------------------------------------------------------
  > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(gt) Comando de iluminação/AVAC através da GTC  - Técnico")(other-window -1)(kill-buffer)(delete-window))][gt]])       > Comando de iluminação/AVAC através da GTC  - Técnico
@@ -93,7 +93,7 @@
 Fx: dv-print-siigo-ot-type       ;; Print text in another buffer open in another window by clicking the links and closes this one buffer
 Fx: <<dv-insert-siigo-ot-type>>  ;; Inser text in current buffer in another line, opening a new window and then closing
 Fx: dv-paste-siigo-ot-type       ;; Just past the whole text list of OTs in the current cursor position (uDev)
-Fx: C-s                          ;; Interactive search called: iSearch
+Fx: C-s                          ;; (CTRL + S) Interactive search called: iSearch
 Fx: ser                          ;; uDev: Send to init.el  
 Fx: ...s de av...                ;; uDev
 Fx: ...as ex...                  ;; uDev
