@@ -12,7 +12,7 @@
 
 --- Acompanhaments, Testes & Contagens -----------------------------------------
  > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(os ex) Apoio a empreiteiros exteriores")(other-window -1)(kill-buffer)(delete-window))][os ex]])    > Apoio a empreiteiros exteriores      
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(as ex) Apoio de empresas exteriores")(other-window -1)(kill-buffer)(delete-window))][as ex]])    > Apoio de empresas exteriores      
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(as ex) Apoio de empresas exteriores")(other-window -1)(kill-buffer)(delete-window))][e em]])     > Apoio de empresas exteriores      
  > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(fl) Contagem de Energia e Fluidos - Técnico")(other-window -1)(kill-buffer)(delete-window))][fl]])       > Contagem de Energia e Fluidos - Técnico         
  > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(a em L) Contagem de energia em lojas - Técnico")(other-window -1)(kill-buffer)(delete-window))][a em L]])   > Contagem de energia em lojas - Técnico     
  > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(che) Verificação de cheiros (gás, esgotos, etc) - Produto")(other-window -1)(kill-buffer)(delete-window))][che]])      > Verificação de cheiros (gás, esgotos, etc) - Produto        
@@ -31,7 +31,7 @@
  > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(lig) Ligar/Desligar Iluminação Exterior - Técnico")(other-window -1)(kill-buffer)(delete-window))][lig]])      > Ligar/Desligar Iluminação Exterior - Técnico        
  > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(os em l) Pequenos trabalhos eléctricos em lojas - Técnico")(other-window -1)(kill-buffer)(delete-window))][os em l]])  > Pequenos trabalhos eléctricos em lojas - Técnico    
  > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(atm) Rearme e pequenos trabalhos em ATM - Produto")(other-window -1)(kill-buffer)(delete-window))][atm]])      > Rearme e pequenos trabalhos em ATM - Produto        
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(res - c) Rearme/Desarme de disjuntores - Centro e Parques - Técnico")(other-window -1)(kill-buffer)(delete-window))][res - c]])  > Rearme/Desarme de disjuntores - Centro e Parques - Técnico    
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(res - c) Rearme/Desarme de disjuntores - Centro e Parques - Técnico")(other-window -1)(kill-buffer)(delete-window))][es - c]])   > Rearme/Desarme de disjuntores - Centro e Parques - Técnico    
  > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(res e) Rearme/Desarme de disjuntores em lojas - Técnico")(other-window -1)(kill-buffer)(delete-window))][res e]])    > Rearme/Desarme de disjuntores em lojas - Técnico      
  > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(of) Reparações eléctricas em oficina - Técnico")(other-window -1)(kill-buffer)(delete-window))][of]])       > Reparações eléctricas em oficina - Técnico         
  > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(eme) Subst. Lâmpadas/Outros Trab - Ilum. Emergência - Produto")(other-window -1)(kill-buffer)(delete-window))][eme]])      > Subst. Lâmpadas/Outros Trab - Ilum. Emergência - Produto        
