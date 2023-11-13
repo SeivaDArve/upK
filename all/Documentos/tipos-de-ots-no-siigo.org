@@ -10,7 +10,7 @@
  > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(s de av) Trabalhos diversos de AVAC - Técnico")(other-window -1)(kill-buffer)(delete-window))][s de av]])  > Trabalhos diversos de AVAC - Técnico    
 
 
---- Acompanhaments, Testes & Contagens -----------------------------------------
+--- Acompanhamentos, Testes & Contagens -----------------------------------------
  > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(os ex) Apoio a empreiteiros exteriores")(other-window -1)(kill-buffer)(delete-window))][os ex]])    > Apoio a empreiteiros exteriores      
  > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(as ex) Apoio de empresas exteriores")(other-window -1)(kill-buffer)(delete-window))][e em]])     > Apoio de empresas exteriores      
  > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(fl) Contagem de Energia e Fluidos - Técnico")(other-window -1)(kill-buffer)(delete-window))][fl]])       > Contagem de Energia e Fluidos - Técnico         
@@ -87,8 +87,15 @@
  > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(spr) Intervenções na rede de sprinklers das lojas - Técnico")(other-window -1)(kill-buffer)(delete-window))][spr]])      > Intervenções na rede de sprinklers das lojas - Técnico        
  > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(leit) Leituras/Pequenas reparações do sistema de tratamento de águas - Técnico")(other-window -1)(kill-buffer)(delete-window))][leit]])     > Leituras/Pequenas reparações do sistema de tratamento de águas - Técnico       
  > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(leir) Limpeza/Desentupimento de esgotos/ralos/caleiras - Técnico")(other-window -1)(kill-buffer)(delete-window))][leir]])     > Limpeza/Desentupimento de esgotos/ralos/caleiras - Técnico       
- > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(sos n) Trabalhos diversos na rede de incêndios - Técnico"")(other-window -1)(kill-buffer)(delete-window))][sos n]])    > Trabalhos diversos na rede de incêndios - Técnico      
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "(sos n) Trabalhos diversos na rede de incêndios - Técnico")(other-window -1)(kill-buffer)(delete-window))][sos n]])    > Trabalhos diversos na rede de incêndios - Técnico      
 
+--- Sem tipo -------------------------------------------------------------------
+ > Não tipificada
+ > ([[elisp:(progn (other-window 1)(end-of-line)(insert "Não Tipificada")(other-window -1)(kill-buffer)(delete-window))][nao]])    > Não Tipificada
+
+
+
+ 
 * Instruções
 
 [[elisp:(beginning-of-buffer)][Topo]] da pagina
