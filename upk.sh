@@ -97,6 +97,8 @@ if [ -z "$*" ]; then
          f_c1; echo "This file edited by the app 'upk' closed at:"; f_rc
          v_date_now=$(date)
          echo " > $v_date_now"
+         echo
+         echo " >> uDev: Sum of time (between openning and closing file)"
 
       }
    
