@@ -1,0 +1,108 @@
+#+TITLE: Apoio ao Ensaio semanal das bombas de Incendio
+#+Description: Sempre que se vai fazer o arranque das bombas, é necessario copiar este texto para o Diario da UPK do DV. 
+#+STARTUP: overview
+
+> [[uDev: Copiar todo o texto deste buffer][Copy-all-and-transfer-to-cursor-position-other-buffer]]
+
+    [[elisp:(progn (funcall-interactively 'hl-line-mode t)(message "\n\nTurn line highlight on/off with: M-x hl-line"))][highlight-line:on]] [[elisp:(progn (funcall-interactively 'hl-line-mode -1)(message "\n\nTurn line highlight on/off with: M-x hl-line"))][highlight-line:off]]
+
+    [[uDev][Facilitar-Siigo]] [[uDev][Facilitar-Ensaio]]
+
+    [[elisp:(progn (save-buffer)(message "\n\nThis buffer was saved"))][Guardar:Progresso]]
+
+- [ ] (1h? ) [BOJ 001] Bomba Jokey 
+:PROPERTIES:
+=Ensaio da Bomba Jokey=
+
+[[elisp:(progn (save-excursion (beginning-of-line)(search-backward "PROP")(org-narrow-to-element))(end-of-line)(funcall-interactively 'hl-line-mode t))][Focar:Elemento]] [[elisp:(progn (widen)(funcall-interactively 'hl-line-mode -1))][Desfocar:Elemento]]
+
+[[Descricao do Procedimento: Ensaio das Bombas na CBI][Link para o procedimento]]
+
+Switch to: [[Buffer do procedimento][Procedimento]] [[buffer dos Apontamentos][Apontamentos]]
+
+|-------------------------------------+---------|
+| Parametros de Leitura               | Leitura |
+|-------------------------------------+---------|
+| 09. Pressão Arranque Jockey - Bar   |         |
+| 13. Pressão de Paragem Jockey - Bar |         |
+|-------------------------------------+---------|
+
+Notas {
+
+}
+
+:END:
+
+- [ ] (1h? ) [BEI 001] Bomba Eletrica de Incendio 
+:PROPERTIES:
+=Ensaio da Bomba Eletrica=
+
+[[uDev][Link para o procedimento]]
+
+| Parametros Extra          | Leitura | Butoes       |
+|---------------------------+---------+--------------|
+| Hora de inicio real       |         | [[uDev][Inserir Hora]] |
+| Hora de Fim (+ 10 min~)   |         | [[uDev][Inserir Hora]] |
+| Horas do display (inicio) |         |              |
+| Horas do display (fim)    |         |              |
+
+
+
+|----------------------------------------------------------------------+----------+-----------------------|
+| Parametros de Leitura ([[Facilitar leitura no siigo][Facilitar Siigo]]/[[Para acilitar introduzir dados durante o ensaio][Facilitar Ensaio]])             | Leitura  | Converter             |
+|----------------------------------------------------------------------+----------+-----------------------|
+| 10. Pressão Arranque Eletrobomba - Bar                               | 7.6      |                       |
+| 14. Pressão de Paragem Eletrobomba - bar                             | -        |                       |
+| 01. Consumo Elétrico L1 Eletrobomba - A                              |          |                       |
+| 02. Consumo Elétrico L2 Eletrobomba - A                              |          |                       |
+| 03. Consumo Elétrico L3 Eletrobomba - A                              |          |                       |
+| 17. Pressão Eletrobomba para condição de 50% do caudal nominal - Bar |          |                       |
+| 04. Caudal de Água - m3/h                                            | ( l/min) | [[uDev][Converter]] [[https://www.unitconverters.net/flow/liter-minute-to-cubic-meter-hour.htm][link-online]] |
+|----------------------------------------------------------------------+----------+-----------------------|
+
+Notas/Anomalias {
+
+}
+
+:END:
+
+- [ ] (1h? ) [BDI 001] Bomba Diesel de Incendio 
+:PROPERTIES:
+=Ensaio da Bomba Diesel=
+
+[[uDev][Link para o procedimento]]
+
+Nota: Cada unidade do manometro analogico = 5 min de funcionamento
+
+Importante:
+ 1. Verificar nivel do Oleo
+ 2. Verificar bloco do motor quente (para nao arrancar a frio)
+ 3. Verificado nivel de Agua do radiador
+
+| Parametros Extra                      | Leitura | Butoes       |
+|---------------------------------------+---------+--------------|
+| Hora de inicio                        |         | [[uDev][Inserir Hora]] |
+| Hora de Fim (+ 20 min~)               |         | [[uDev][Inserir Hora]] |
+| Horas no manometro analogico (inicio) |         |              |
+| Horas no manometro analogico (fim)    |         |              |
+
+|--------------------------------------------------------------+------------+-------------------------|
+| Parametros de Leitura ([[Facilitar leitura no siigo][Facilitar Siigo]]/[[Para acilitar introduzir dados durante o ensaio][Facilitar Ensaio]])     | Leitura    | Converter               |
+|--------------------------------------------------------------+------------+-------------------------|
+| 04. Caudal de Água - m3/h                                    | (   l/min) | [[uDev][de L/Min para m3/h]] [[https://www.unitconverters.net/flow/liter-minute-to-cubic-meter-hour.htm][link]] |
+| 05. Horas Funcionamento Motobomba - h                        |            |                         |
+| 06. Nível de Carga de Bateria 1 Motobomba - V                |            |                         |
+| 07. Nível de Carga de Bateria 2 Motobomba - V                |            |                         |
+| 08. Nível de Combustível Motobomba - %                       |            |                         |
+| 11. Pressão Arranque Motobomba - Bar                         | 6.6        |                         |
+| 12. Pressão de Óleo Motobomba - Psi                          | (  BAR)    | [[uDev][de BAR para PSI]] [[https://www.unitconverters.net/pressure/bar-to-psi.htm][link]]    |
+| 15. Pressão de Paragem Motobomba - Bar                       | -          |                         |
+| 16. Temperatura Água do Motor - ºC                           |            |                         |
+| 18. Pressão Motobomba para condição de 50% do caudal nominal |            |                         |
+|--------------------------------------------------------------+------------+-------------------------|
+
+Notas/Anomalias {
+
+}
+
+:END:
