@@ -1,0 +1,30 @@
+# Title: Support for dailYlog.org to export info to siigo.com
+# Instalar Tkinter: 1. `sudo apt install python3-tk`
+#                   2. O WSL2 não tem suporte nativo para interfaces graficas. Para visualizar interfaces gráficas no WSL2, você precisará de um servidor X (X server) no Windows. O X server permitirá que você visualize janelas gráficas.
+#                      Instalar e permitir conexões de rede ao VcXsrv: https://www.shogan.co.uk/how-tos/wsl2-gui-x-server-using-vcxsrv/
+#                      2.1 `sudo apt install xfce4 xfce4-goodies`
+#                      2.2 During the install you’ll be prompted about which display manager to use. This is up to you, though I personally chose 'lightdm'.
+#                      2.3 Download and extract the .zip file at C:\
+#                           2.3.1 `cd mnt/c/`
+#                           2.3.1 `wget https://shogan.b-cdn.net/wp-content/uploads/WSL-VcXsrv.zip`
+#                           2.3.1 `wget https://shogan.b-cdn.net/wp-content/uploads/WSL-VcXsrv.zip`
+#                           2.3.1 `sudo apt install unzip`
+#                           2.3.1 `unzip X.zip`
+
+import tkinter as tk
+
+# Criar a janela principal
+window = tk.Tk()
+
+# Definir o título da janela
+window.title("Janela Tkinter")
+
+# Definir o tamanho da janela
+window.geometry("300x200")
+
+# Rótulo de exemplo
+label = tk.Label(window, text="Olá, Tkinter!")
+label.pack()
+
+# Iniciar o loop principal
+window.mainloop()
