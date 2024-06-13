@@ -16,6 +16,7 @@
 #                 `mv $h/'WSL VcXsrv'/ .`
 #                  Run the vcxsrv-64.1.20.8.1.installer.exe installer in this folder, choosing defaults for the install.
 
+""" Tutorial: https://www.youtube.com/watch?v=MeMCBdnhvQs&list=PLs3IFJPw3G9IiHm9PEP1UaMtuvACmxVMj """
 
 """ Note: Existem 3 'Geometry manager' para colocar os nossos widget no ecra: `pack` `place` `grid` """
 import tkinter as tk
