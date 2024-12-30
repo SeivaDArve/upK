@@ -1,7 +1,7 @@
 #!/bin/bash
-
 # Title: Create dirs by range number
 # Description: When there are lots of images to send AND sort from phone to PC, this script creates all directoies needed. 
+
 # Use: specify a range of days you want this script to create directories 
    # Example: enter: '20 31' and it will create:
       # 20 Dez 2022
@@ -30,11 +30,13 @@ v_uname=$(uname -a)
       # ask for range
       read -p "Range dir Creator: input low ranged number: " v_low
       read -p "Range dir Creator: input high ranged number: " v_high
+      read -p "Range dir Creator: input month (Example: Sep): " v_month
 
-      for i in {$v_low..$v_high}; do
-         echo $i
+      for i in $(seq $v_low $v_high); do
+         echo "pasta-$i-$v_month-2025"
          i=$((i+1))
       done
+
    elif [[ $v_uname =~ "Microsoft" ]]; then
       clear
 
@@ -51,9 +53,8 @@ v_uname=$(uname -a)
 
       if [[ $v_low > $v_high ]]; then
          echo " > Must input low range before high range; aborting"
+
       else
-         
-      
          while true; do
             mkdir -p "${v_low}-${v_month_year}"
             v_low=$((v_low+1))
@@ -61,4 +62,5 @@ v_uname=$(uname -a)
             if [[ $v_low > $v_high ]]; then break; fi
          done
       fi
+
    fi
