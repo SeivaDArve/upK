@@ -83,6 +83,10 @@ function f_greet {
 function f_search_at {
    # Pedr ao utilizador para inserir texto que posso existir na lista de ATs do Centro VG
 
+   # Verbose help: both ways to reach this fx
+      echo ' <--- [cmd: `upk . RET 2 RET` ou `upk at`]'
+      echo
+
    if [[ -d ${v_REPOS_CENTER}/upK-diario-Dv/ ]]; then
       echo -e "Pesquisa: ATs do Vasco da Gama"
       echo -n " > "
@@ -337,6 +341,10 @@ elif [ $1 == "." ]; then
       [[ $v_list =~ $Lz3  ]] && echo "$Lz2" >> $Lz4
       unset v_list
     
+
+elif [ $1 == "at" ]; then
+   # Pesquisa de ATs do Centro VG
+   f_search_at
 
 else
    echo "upk: Arg nao reconhecido"
