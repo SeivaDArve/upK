@@ -332,11 +332,11 @@ elif [ $1 == "." ]; then
       L0='REPO: upk: '
       
       #v_list=$(echo -e "$L1 \n$L2 \n$L3 \n\n$Lz3" | fzf --cycle --prompt="$L0")
-      v_list=$(echo -e "$L1 \n$L2 \n$L3 \n\n$Lz3" | fzf --header="[Menu saved to: ... ](acess via: \`D ..\`)" -m --pointer=">" --border=rounded --header-first --cycle --prompt="$L0")
+      v_list=$(echo -e "$L1 \n$L2 \n$L3 \n\n$Lz3" | fzf --preview "echo history {}" --header="[Menu saved to: ... ](acess via: \`D ..\`)" -m --pointer=">" --border=rounded --header-first --cycle --prompt="$L0")
 
    # Perceber qual foi a escolha da lista
       [[ $v_list =~ "3. " ]] && echo "uDev" && echo " > $v_choosen_file"
-      [[ $v_list =~ "2. " ]] && f_search_at
+      [[ $v_list =~ "2. " ]] && f_search_at && history -s "upk at"
       [[ $v_list =~ "1. " ]] && echo "Canceled: $Lz4"
       [[ $v_list =~ $Lz3  ]] && echo "$Lz2" >> $Lz4
       unset v_list
