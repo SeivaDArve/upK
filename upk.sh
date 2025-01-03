@@ -326,21 +326,23 @@ elif [ $1 == "." ]; then
    # Lista de opcoes para o menu `fzf`
       Lz1='Save '; Lz2='upk .'; Lz3="$Lz1\`$Lz2\`"; Lz4=$v_drya_fzf_menu_hist
 
-      L4="4. Comboios CP"
+      L5="5. Comboios CP"
+      L4="4. Credenciais SIIGO"
       L3="3. Abrir ficheiro 'diario' pre-definido"
       L2="2. Grep ATs do Centro VG"
       L1="1. Cancel"
       L0='REPO: upk: '
       
       #v_list=$(echo -e "$L1 \n$L2 \n$L3 \n\n$Lz3" | fzf --cycle --prompt="$L0")
-      v_list=$(echo -e "$L1 \n$L2 \n$L3 \n$L4 \n\n$Lz3" | fzf --header="[Menu saved to: ... ](acess via: \`D ..\`)" -m --pointer=">" --border=rounded --header-first --cycle --prompt="$L0")
+      v_list=$(echo -e "$L1 \n$L2 \n$L3 \n$L4 \n$L5 \n\n$Lz3" | fzf --preview "echo history {}" --header="[Menu saved to: ... ](acess via: \`D ..\`)" -m --pointer=">" --border=rounded --header-first --cycle --prompt="$L0")
 
    # Perceber qual foi a escolha da lista
-      [[ $v_list =~ "4. " ]] && echo "uDev" 
-      [[ $v_list =~ "3. " ]] && echo "uDev" && echo " > $v_choosen_file"
-      [[ $v_list =~ "2. " ]] && f_search_at
-      [[ $v_list =~ "1. " ]] && echo "Canceled: $Lz4"
       [[ $v_list =~ $Lz3  ]] && echo "$Lz2" >> $Lz4
+      [[ $v_list =~ "5. " ]] && echo "uDev" 
+      [[ $v_list =~ "4. " ]] && echo -e "Credenciais SIIGO Vasco da Gama: \n > david.rodrigues.vg@siigo.com \n > 'David Rodrigues VG'"
+      [[ $v_list =~ "3. " ]] && echo "uDev" && echo " > $v_choosen_file"
+      [[ $v_list =~ "2. " ]] && f_search_at && history -s "upk at"
+      [[ $v_list =~ "1. " ]] && echo "Canceled: $Lz2"
       unset v_list
     
 
