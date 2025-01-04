@@ -80,7 +80,7 @@ function f_greet {
       f_talk; echo "Done!"
 }
 
-function f_search_at {
+function f_search_AT {
    # Pedr ao utilizador para inserir texto que posso existir na lista de ATs do Centro VG
 
    # Verbose help: both ways to reach this fx
@@ -119,160 +119,171 @@ function f_diary_help {
    echo "   or: https://github.com/SeivaDArve/upK-diario-Dv.git"
 }
 
+
+
+
+
+
+function f_file_closed {
+   # Run this function only AFTER editing the file that was successfully opened
+
+   f_c1; echo "File closed:" 
+   f_rc; echo " > $v_choosen_repo/$v_choosen_file"
+         echo
+   f_c2; echo "Starting upldoad sequence..."
+   f_rc; sleep 1
+         echo
+   f_c1; echo "Automatically adding all files to be commited:"
+   f_rc; echo " > git add --all"
+         git add --all && echo " > Success!"
+         echo
+   f_c1; echo "Commiting all files with the message:":
+   f_rc; echo " > Starting: automatic git add --all; git commit; git push"
+   f_c3; git commit -m "ezGIT: Automatic git add --all; git commit; git push" && f_rc && echo " > Success!"; echo
+   f_c1; echo "Uploading files with:"
+   f_rc; echo " > git push:"
+         echo
+   f_c3; git push && f_rc && echo " > Success!"
+         echo 
+   f_c1; echo "Showing the status of the repository with: "
+   f_rc; echo " > git status:"
+   f_c3; git status && f_rc && echo " > Success!"
+         echo
+   f_c1; echo "This file edited by the app 'upk' closed at:"
+   f_rc; v_date_now=$(date)
+         echo " > $v_date_now"
+         echo
+         echo " >> uDev: Sum of time (between openning and closing file)"
+
+}
+
+
+function f_diary_master {
+   # Run this function only BEFORE editing the file that has the need to be in sync with multiple devices
+
+   # Function that will run in case this repository "upk" does find an external user repo with his personal dily log info
+
+   # Emacs and vim can make a file if it does not exist. 
+      # So it's existence must be verified with -f before, in order to prevent to create a new one. 
+      # The file that is going to be open must exist there before
+      # If -f finds a file, this function will run
+
+   clear
+   figlet $v_sync_name
+
+   f_c1; echo "Time now is: "
+   f_rc
+         v_date_now=$(date)
+         echo " > $v_date_now"
+         echo
+   f_c1; echo "Note about this app 'upk': "
+   f_rc
+         echo " > Any file this app opens is external and you can config to open your own"
+         echo
+   f_c1; echo "User Repository exists with the name:"
+   f_rc
+         echo " > ${v_REPOS_CENTER}/$v_choosen_repo/"
+         echo
+   f_c1; echo "For the user:"
+   f_rc
+         echo " > $v_nickname"
+         echo 
+   f_c1; echo "File choosen for edition:"
+   f_rc
+         echo " > ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file"
+         echo
+   f_c1; echo "You are asking to edit the main file at: $v_choosen_repo"
+   f_rc
+         echo " > And to edit the latest version, we will check for updates on github.com"
+         echo
+   f_c1; echo "Starting download sequence (updating):"
+   f_rc
+         echo " > git pull: "
+
+         cd ${v_REPOS_CENTER}/$v_choosen_repo/
+   f_c3; git pull && f_rc && echo " > Success!"; echo
+
+         echo " >> uDev: If git pull is rejected (downloading updates)"
+         echo "          this script should ask if we still want the file to open"
+         echo
+   f_c1; echo "Showing current git status:"
+   f_rc
+         echo " > git status:"
+   f_c3
+         git status
+   f_rc
+         echo
+   f_c1; echo "After editin the files, they will be automatically uploaded with:"
+   f_rc
+         echo " > git push"
+         echo
+   f_c1; echo "Or manually with:"
+   f_rc
+         echo " > G upk ^"
+         echo
+
+   function f_warning_for_trigger {
+      # Text with color
+            echo " >> uDev: A trigger should be added before opening"
+            echo " >>         In order to allow the choice for this file to be "
+            echo " >>         open only in one device at the same time"
+            echo " >> "
+            echo " >>       Before opening:"
+            echo " >>         send the trigger/info to github.com telling"
+            echo " >>         Which device and repo is currently if the file open"
+            echo " >>         Then the user chooses whether or not to open the file anyway"
+            echo " >> " 
+            echo " >>       After closing:"
+            echo " >>         removes the trigger/info from github.com"
+            echo 
+      f_c2; echo -e "File opening ... "
+      f_rc
+      
+   }
+
+   # Try opening the file with the text editors available:
+      # If windows with graphical interface is available, we will prefer that to the terminal version
+         if [ -f /mnt/c/Program\ Files/Emacs/x86_64/bin/emacs.exe ]; then
+            # if .exe is found, open GUI emacs on windows:
+               f_c1; echo "Opening file (in GUI windows):"; f_rc
+               echo " >  $v_choosen_repo/$v_choosen_file"
+               f_warning_for_trigger
+               echo
+
+               /mnt/c/Program\ Files/Emacs/x86_64/bin/emacs.exe $v_choosen_file && f_c2 && echo -e "... File closed\n" && f_rc && f_file_closed
+
+         else
+            # Otherwise, open emacs in terminal:
+               f_c1; echo "Opening file (in Terminal Linux):"; f_rc
+               echo " >  $v_choosen_repo/$v_choosen_file"
+               echo
+               f_warning_for_trigger
+               echo
+
+               emacs ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && f_c2 && echo -e "... File closed\n" && f_rc && f_file_closed #\
+               #|| vim ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && f_file_closed \
+               #|| nano ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && f_file_closed
+         fi
+}
+
+
+
+
+
+
+# -------------------------------------------
+# -- Functions above --+-- Arguments Below --
+# -------------------------------------------
+
+
+
+
+
+
+
 if [ -z "$*" ]; then
    # open diary (stored on a separate repository) on purpose
    
-
-   function f_file_closed {
-      # Run this function only AFTER editing the file that was successfully opened
-
-      f_c1; echo "File closed:" 
-      f_rc
-            echo " > $v_choosen_repo/$v_choosen_file"
-            echo
-      f_c2; echo "Starting upldoad sequence..."
-      f_rc
-            sleep 1
-            echo
-      f_c1; echo "Automatically adding all files to be commited:"
-      f_rc
-            echo " > git add --all"
-            git add --all && echo " > Success!"
-            echo
-      f_c1; echo "Commiting all files with the message:":
-      f_rc
-            echo " > Starting: automatic git add --all; git commit; git push"
-      f_c3; git commit -m "ezGIT: Automatic git add --all; git commit; git push" && f_rc && echo " > Success!"; echo
-      f_c1; echo "Uploading files with:"
-      f_rc
-            echo " > git push:"
-            echo
-      f_c3; git push && f_rc && echo " > Success!"
-            echo 
-      f_c1; echo "Showing the status of the repository with: "
-      f_rc
-            echo " > git status:"
-      f_c3; git status && f_rc && echo " > Success!"
-            echo
-      f_c1; echo "This file edited by the app 'upk' closed at:"
-      f_rc
-            v_date_now=$(date)
-            echo " > $v_date_now"
-            echo
-            echo " >> uDev: Sum of time (between openning and closing file)"
-
-   }
-   
-   function f_diary_master {
-      # Run this function only BEFORE editing the file that has the need to be in sync with multiple devices
-
-      # Function that will run in case this repository "upk" does find an external user repo with his personal dily log info
-
-      # Emacs and vim can make a file if it does not exist. 
-         # So it's existence must be verified with -f before, in order to prevent to create a new one. 
-         # The file that is going to be open must exist there before
-         # If -f finds a file, this function will run
-
-      clear
-      figlet $v_sync_name
-
-      f_c1; echo "Time now is: "
-      f_rc
-            v_date_now=$(date)
-            echo " > $v_date_now"
-            echo
-      f_c1; echo "Note about this app 'upk': "
-      f_rc
-            echo " > Any file this app opens is external and you can config to open your own"
-            echo
-      f_c1; echo "User Repository exists with the name:"
-      f_rc
-            echo " > ${v_REPOS_CENTER}/$v_choosen_repo/"
-            echo
-      f_c1; echo "For the user:"
-      f_rc
-            echo " > $v_nickname"
-            echo 
-      f_c1; echo "File choosen for edition:"
-      f_rc
-            echo " > ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file"
-            echo
-      f_c1; echo "You are asking to edit the main file at: $v_choosen_repo"
-      f_rc
-            echo " > And to edit the latest version, we will check for updates on github.com"
-            echo
-      f_c1; echo "Starting download sequence (updating):"
-      f_rc
-            echo " > git pull: "
-
-            cd ${v_REPOS_CENTER}/$v_choosen_repo/
-      f_c3; git pull && f_rc && echo " > Success!"; echo
-
-            echo " >> uDev: If git pull is rejected (downloading updates)"
-            echo "          this script should ask if we still want the file to open"
-            echo
-      f_c1; echo "Showing current git status:"
-      f_rc
-            echo " > git status:"
-      f_c3
-            git status
-      f_rc
-            echo
-      f_c1; echo "After editin the files, they will be automatically uploaded with:"
-      f_rc
-            echo " > git push"
-            echo
-      f_c1; echo "Or manually with:"
-      f_rc
-            echo " > G upk ^"
-            echo
-
-      function f_warning_for_trigger {
-         # Text with color
-               echo " >> uDev: A trigger should be added before opening"
-               echo " >>         In order to allow the choice for this file to be "
-               echo " >>         open only in one device at the same time"
-               echo " >> "
-               echo " >>       Before opening:"
-               echo " >>         send the trigger/info to github.com telling"
-               echo " >>         Which device and repo is currently if the file open"
-               echo " >>         Then the user chooses whether or not to open the file anyway"
-               echo " >> " 
-               echo " >>       After closing:"
-               echo " >>         removes the trigger/info from github.com"
-               echo 
-         f_c2; echo -e "File opening ... "
-         f_rc
-         
-      }
-
-      # Try opening the file with the text editors available:
-         # If windows with graphical interface is available, we will prefer that to the terminal version
-            if [ -f /mnt/c/Program\ Files/Emacs/x86_64/bin/emacs.exe ]; then
-               # if .exe is found, open GUI emacs on windows:
-                  f_c1; echo "Opening file (in GUI windows):"; f_rc
-                  echo " >  $v_choosen_repo/$v_choosen_file"
-                  f_warning_for_trigger
-                  echo
-
-                  /mnt/c/Program\ Files/Emacs/x86_64/bin/emacs.exe $v_choosen_file && f_c2 && echo -e "... File closed\n" && f_rc && f_file_closed
-
-            else
-               # Otherwise, open emacs in terminal:
-                  f_c1; echo "Opening file (in Terminal Linux):"; f_rc
-                  echo " >  $v_choosen_repo/$v_choosen_file"
-                  echo
-                  f_warning_for_trigger
-                  echo
-
-                  emacs ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && f_c2 && echo -e "... File closed\n" && f_rc && f_file_closed #\
-                  #|| vim ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && f_file_closed \
-                  #|| nano ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file && f_file_closed
-            fi
-   }
-
-
-
    if [ -f ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file ]; then
       # If file $v_choosen_repo exists, then:
          f_diary_master
@@ -326,6 +337,8 @@ elif [ $1 == "." ]; then
    # Lista de opcoes para o menu `fzf`
       Lz1='Save '; Lz2='upk .'; Lz3="$Lz1\`$Lz2\`"; Lz4=$v_drya_fzf_menu_hist
 
+      L7="7. Registar SAIDA   no Vasco da Gama"
+      L6="6. Registar ENTRADA no Vasco da Gama"
       L5="5. Comboios CP"
       L4="4. Credenciais SIIGO"
       L3="3. Abrir ficheiro 'diario' pre-definido"
@@ -341,14 +354,29 @@ elif [ $1 == "." ]; then
       [[ $v_list =~ "5. " ]] && echo "uDev" 
       [[ $v_list =~ "4. " ]] && echo -e "Credenciais SIIGO Vasco da Gama: \n > david.rodrigues.vg@siigo.com \n > 'David Rodrigues VG'"
       [[ $v_list =~ "3. " ]] && echo "uDev" && echo " > $v_choosen_file"
-      [[ $v_list =~ "2. " ]] && f_search_at && history -s "upk at"
+      [[ $v_list =~ "2. " ]] && f_search_AT && history -s "upk at"
       [[ $v_list =~ "1. " ]] && echo "Canceled: $Lz2"
       unset v_list
     
 
-elif [ $1 == "at" ]; then
+elif [ $1 == "at" ] || [ $1 == "AT" ] || [ $1 == "At" ]; then
    # Pesquisa de ATs do Centro VG
-   f_search_at
+   f_search_AT
+
+
+elif [ $1 == "+" ] || [ $1 == "entrada" ]; then
+   # Registar entrada no Vasco da Gama 
+   # (picar o ponto/dar entrada na central)
+
+   echo "foo" >> ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file
+   vim ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file
+
+elif [ $1 == "-" ] || [ $1 == "saida" ]; then
+   # Registar entrada no Vasco da Gama 
+   # (picar o ponto/dar entrada na central)
+
+   echo "bar" >> ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file
+   vim ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file
 
 else
    echo "upk: Arg nao reconhecido"
