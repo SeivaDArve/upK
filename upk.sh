@@ -292,6 +292,9 @@ if [ -z "$*" ]; then
          f_diary_help
    fi
 
+elif [[ $1 == "h" ]]; then
+   echo "Help is uDev"
+
 elif [[ $1 == "vim" ]]; then
       vim ${v_REPOS_CENTER}/$v_choosen_repo/dailyLog.org 
 
@@ -326,6 +329,9 @@ elif [ $1 == "img" ]; then
       fi
    fi
 
+elif [ $1 == "clone-drya" ]; then
+   echo "uDev: cloning repo DRYa"
+
 elif [ $1 == "." ]; then
    # Menu principal fzf desta repo
    
@@ -337,8 +343,8 @@ elif [ $1 == "." ]; then
    # Lista de opcoes para o menu `fzf`
       Lz1='Save '; Lz2='upk .'; Lz3="$Lz1\`$Lz2\`"; Lz4=$v_drya_fzf_menu_hist
 
-      L7="7. Registar SAIDA   no Vasco da Gama"
-      L6="6. Registar ENTRADA no Vasco da Gama"
+      L7="7. Registar/Consulstar horario do VG"
+      L6="6. Registar ENTRADA/SAIDA no VG"
       L5="5. Comboios CP"
       L4="4. Credenciais SIIGO"
       L3="3. Abrir ficheiro 'diario' pre-definido"
