@@ -68,16 +68,43 @@ function f_greet {
    f_rc 
 }
 
-# After colors are defined, create a "Face" for each "ezGIT:
-   function f_talk {
-      f_c1; echo -n "UPK: "
-      f_rc
-   }
+function f_talk {
+   # After colors are defined, create a "Face" for each "ezGIT:
 
-# After each ezGIT function finishes, say "done"
-   function f_done {
-      echo
-      f_talk; echo "Done!"
+   f_c1; echo -n "UPK: "
+   f_rc
+}
+
+function f_prsK {
+   # Press Any key to continue
+   # Or wait X seconds
+
+   
+   # A variavel $v_txt tem de ser definida antes desta fx ser chamada
+      # EXEMPLO:
+      #
+      # v_txt="Vai ser de seguida editado o ficheiro X"
+      # f_prsK
+
+
+   # Set how many seconds to wait before automatically continue
+      v_secs=5
+
+   # Message 
+      v_msg="   > [ PRESS any key || Cancel: Ctrl-C ] "
+
+   # Text to print
+         #echo
+   f_talk; echo "$v_txt"  # A variavel $v_txt tem de ser definida antes desta fx ser chamada
+   f_c3;   echo "$v_msg"
+           read -s -n 1 -p "   > "
+   f_rc;   echo
+}
+
+function f_done {
+   # After each ezGIT function finishes, say "done"
+           echo
+   f_talk; echo "Done!"
 }
 
 function f_AT_tutorial {
@@ -102,10 +129,14 @@ function f_AT_list_edit_vim {
    f_AT_tutorial
 
    if [[ -d ${v_REPOS_CENTER}/upK-diario-Dv/ ]]; then
-      f_talk; echo "A visualizar/editar a lista de ATs do Vasco da Gama"
-      read -s -p " > [Any Key / wait 3s] " -t 3
-      echo
-      vim ${v_REPOS_CENTER}/upK-diario-Dv/all/lista-at-vg.org
+      # Se o ficheiro existir, é editado
+
+      # Para usar a fx "f_prsK" ou "f_press_Key_to_continue" tem de se definir uma msg antes, e chamar a fx depois
+         v_txt="A visualizar/editar a lista de ATs do Vasco da Gama (com vim)" 
+         f_prsK
+
+      # Editar o ficheiro
+         vim ${v_REPOS_CENTER}/upK-diario-Dv/all/lista-at-vg.org
 
    else
       f_talk; echo "Erro: Falta repo upK-diario-Dv"
@@ -120,9 +151,11 @@ function f_AT_list_edit_emacs {
    f_AT_tutorial
 
    if [[ -d ${v_REPOS_CENTER}/upK-diario-Dv/ ]]; then
-      f_talk; echo "A visualizar/editar a lista de ATs do Vasco da Gama"
-      read -s -p " > [Any Key / wait 3s] " -t 3
-      echo
+
+      # Para usar a fx "f_prsK" ou "f_press_Key_to_continue" tem de se definir uma msg antes, e chamar a fx depois
+         v_txt="A visualizar/editar a lista de ATs do Vasco da Gama (com emacs)" 
+         f_prsK
+
       emacs ${v_REPOS_CENTER}/upK-diario-Dv/all/lista-at-vg.org
 
    else
