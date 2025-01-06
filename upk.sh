@@ -80,23 +80,73 @@ function f_greet {
       f_talk; echo "Done!"
 }
 
+function f_AT_tutorial {
+   # Verbose help: both ways to reach this fx
+
+      f_greet
+      f_talk; echo 'Tutorial: Opcoes sobre ATs:'
+              echo ' > Pesquisar texto sobre ATs: '
+              echo '    >   `upk . RET 2 RET`  (menu fzf)'
+              echo '    ou: '
+              echo '    >   `upk at`           (terminal)'
+              echo
+              echo ' > Editar ficheiro das grelhas:'
+              echo '    > `upk at .   `   (com vim)     '
+              echo '    > `upk at . em`   (com emacs)    '
+              echo
+}
+
+function f_AT_list_edit_vim {
+   # Se quisermos editar ou visualizar a grelha inteira das AT do centro   
+
+   f_AT_tutorial
+
+   if [[ -d ${v_REPOS_CENTER}/upK-diario-Dv/ ]]; then
+      f_talk; echo "A visualizar/editar a lista de ATs do Vasco da Gama"
+      read -s -p " > [Any Key / wait 3s] " -t 3
+      echo
+      vim ${v_REPOS_CENTER}/upK-diario-Dv/all/lista-at-vg.org
+
+   else
+      f_talk; echo "Erro: Falta repo upK-diario-Dv"
+              echo ' > Faz download com `D clone upkd`'
+   fi
+
+}
+
+function f_AT_list_edit_emacs {
+   # Se quisermos editar ou visualizar a grelha inteira das AT do centro   
+
+   f_AT_tutorial
+
+   if [[ -d ${v_REPOS_CENTER}/upK-diario-Dv/ ]]; then
+      f_talk; echo "A visualizar/editar a lista de ATs do Vasco da Gama"
+      read -s -p " > [Any Key / wait 3s] " -t 3
+      echo
+      emacs ${v_REPOS_CENTER}/upK-diario-Dv/all/lista-at-vg.org
+
+   else
+      f_talk; echo "Erro: Falta repo upK-diario-Dv"
+              echo ' > Faz download com `D clone upkd`'
+   fi
+}
+
 function f_search_AT {
    # Pedr ao utilizador para inserir texto que posso existir na lista de ATs do Centro VG
 
-   # Verbose help: both ways to reach this fx
-      echo ' <--- [cmd: `upk . RET 2 RET` ou `upk at`]'
-      echo
+   f_AT_tutorial
 
    if [[ -d ${v_REPOS_CENTER}/upK-diario-Dv/ ]]; then
-      echo -e "Pesquisa: ATs do Vasco da Gama"
-      echo -n " > "
-      read v_ans
-      echo
+      f_talk; echo -e "Pesquisa: ATs do Vasco da Gama"
+              echo -n " > "
+              read v_ans
+              echo
+
       sed "s/  \+/ /g" ${v_REPOS_CENTER}/upK-diario-Dv/all/lista-at-vg.org | grep --color=auto  -i $v_ans 
 
    else
-      echo "Erro: Falta repo upK-diario-Dv"
-      echo ' > Faz download com `D clone upkd`'
+      f_talk; echo "Erro: Falta repo upK-diario-Dv"
+              echo ' > Faz download com `D clone upkd`'
    fi
 }
 
@@ -433,8 +483,42 @@ elif [ $1 == "." ]; then
     
 
 elif [ $1 == "at" ] || [ $1 == "AT" ] || [ $1 == "At" ]; then
-   # Pesquisa de ATs do Centro VG
-   f_search_AT
+   # Opcoes sobre ATs
+
+   if [ -z "$2" ]; then
+      # Pesquisa de ATs do Centro VG
+      f_search_AT
+
+
+
+   elif [ $2 == "." ]; then
+      # Editar/Visualizar ficheiro de grelhas com AT
+
+      if [ -z "$3" ]; then
+         # Editar com vim (predefinido)
+         f_AT_list_edit_vim
+
+      elif [ $3 == "em" ]; then
+         # Editar/Visualizar ficheiro de grelhas com AT
+         f_AT_list_edit_emacs
+
+      else
+         # In case the user inputs wrong, print tutorial
+         f_AT_tutorial
+
+      fi
+
+
+
+   elif [ $2 == "h" ]; then
+      # Help Fx
+      f_AT_tutorial
+
+   else
+      # In case the user inputs wrong, print tutorial
+      f_AT_tutorial
+
+   fi
 
 elif [ $1 == "range-dirs" ]; then
    f_range_dir_creator  # uDev: runs on Android and Windows, but not on Linux
