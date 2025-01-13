@@ -145,6 +145,14 @@ function f_AT_list_edit_vim {
 
 }
 
+function f_variables_about_at {
+   v_repo_of_at_list=${v_REPOS_CENTER}/upK-diario-Dv
+   v_at_file_inside_repo=all/lista-at-vg.org
+
+   v_at_file=$v_repo_of_at_list/$v_at_file_inside_repo
+}
+
+
 function f_AT_list_edit_emacs {
    # Se quisermos editar ou visualizar a grelha inteira das AT do centro   
 
@@ -167,15 +175,20 @@ function f_AT_list_edit_emacs {
 function f_search_AT {
    # Pedr ao utilizador para inserir texto que posso existir na lista de ATs do Centro VG
 
+   f_variables_about_at
+
    f_AT_tutorial
 
-   if [[ -d ${v_REPOS_CENTER}/upK-diario-Dv/ ]]; then
+   function f_actually_ask_for_at {
       f_talk; echo -e "Pesquisa: ATs do Vasco da Gama"
               echo -n " > "
               read v_ans
               echo
+      sed "s/  \+/ /g" $v_at_file | grep --color=auto  -i $v_ans 
+   }
 
-      sed "s/  \+/ /g" ${v_REPOS_CENTER}/upK-diario-Dv/all/lista-at-vg.org | grep --color=auto  -i $v_ans 
+   if [[ -d $v_repo_of_at_list ]]; then
+      f_actually_ask_for_at 
 
    else
       f_talk; echo "Erro: Falta repo upK-diario-Dv"
@@ -322,33 +335,26 @@ function f_diary_master {
    figlet $v_sync_name
 
    f_c1; echo "Time now is: "
-   f_rc
-         v_date_now=$(date)
+   f_rc; v_date_now=$(date)
          echo " > $v_date_now"
          echo
    f_c1; echo "Note about this app 'upk': "
-   f_rc
-         echo " > Any file this app opens is external and you can config to open your own"
+   f_rc; echo " > Any file this app opens is external and you can config to open your own"
          echo
    f_c1; echo "User Repository exists with the name:"
-   f_rc
-         echo " > ${v_REPOS_CENTER}/$v_choosen_repo/"
+   f_rc; echo " > ${v_REPOS_CENTER}/$v_choosen_repo/"
          echo
    f_c1; echo "For the user:"
-   f_rc
-         echo " > $v_nickname"
+   f_rc; echo " > $v_nickname"
          echo 
    f_c1; echo "File choosen for edition:"
-   f_rc
-         echo " > ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file"
+   f_rc; echo " > ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file"
          echo
    f_c1; echo "You are asking to edit the main file at: $v_choosen_repo"
-   f_rc
-         echo " > And to edit the latest version, we will check for updates on github.com"
+   f_rc; echo " > And to edit the latest version, we will check for updates on github.com"
          echo
    f_c1; echo "Starting download sequence (updating):"
-   f_rc
-         echo " > git pull: "
+   f_rc; echo " > git pull: "
 
          cd ${v_REPOS_CENTER}/$v_choosen_repo/
    f_c3; git pull && f_rc && echo " > Success!"; echo
@@ -357,19 +363,15 @@ function f_diary_master {
          echo "          this script should ask if we still want the file to open"
          echo
    f_c1; echo "Showing current git status:"
-   f_rc
-         echo " > git status:"
-   f_c3
-         git status
-   f_rc
-         echo
+   f_rc; echo " > git status:"
+
+   f_c3; git status
+   f_rc; echo
    f_c1; echo "After editin the files, they will be automatically uploaded with:"
-   f_rc
-         echo " > git push"
+   f_rc; echo " > git push"
          echo
    f_c1; echo "Or manually with:"
-   f_rc
-         echo " > G upk ^"
+   f_rc; echo " > G upk ^"
          echo
 
    function f_warning_for_trigger {
@@ -549,7 +551,23 @@ elif [ $1 == "at" ] || [ $1 == "AT" ] || [ $1 == "At" ]; then
 
    else
       # In case the user inputs wrong, print tutorial
-      f_AT_tutorial
+      #f_AT_tutorial
+
+
+      f_variables_about_at
+
+      if [[ -d $v_repo_of_at_list ]]; then
+         shift
+         for i in $*; do
+            sed "s/  \+/ /g" $v_at_file | grep --color=auto  -i $i
+            #f_search_AT
+         done
+
+      else
+         f_talk; echo "Erro: Falta repo upK-diario-Dv"
+                 echo ' > Faz download com `D clone upkd`'
+      fi
+
 
    fi
 
