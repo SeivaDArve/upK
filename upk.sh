@@ -559,7 +559,7 @@ elif [ $1 == "at" ] || [ $1 == "AT" ] || [ $1 == "At" ]; then
       if [[ -d $v_repo_of_at_list ]]; then
          shift
          for i in $*; do
-            sed "s/  \+/ /g" $v_at_file | grep --color=auto  -i $i
+            sed "s/  \+/ /g" $v_at_file | grep --color=auto -i "$i"
             #f_search_AT
          done
 
