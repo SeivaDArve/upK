@@ -91,13 +91,13 @@ function f_prsK {
       v_secs=5
 
    # Message 
-      v_msg="   > [ PRESS any key || Cancel: Ctrl-C ] "
+      v_msg=" > ( Continue: ANY KEY | Cancel: Ctrl-C ) "
 
    # Text to print
          #echo
    f_talk; echo "$v_txt"  # A variavel $v_txt tem de ser definida antes desta fx ser chamada
-   f_c3;   echo "$v_msg"
-           read -s -n 1 -p "   > "
+   f_c2;   echo "$v_msg"
+           read -s -n 1 -p " > "
    f_rc;   echo
 }
 
