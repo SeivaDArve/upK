@@ -112,14 +112,13 @@ function f_AT_tutorial {
 
       f_greet
       f_talk; echo 'Tutorial: Opcoes sobre ATs:'
-              echo ' > Pesquisar texto sobre ATs: '
-              echo '    >   `upk . RET 2 RET`  (menu fzf)'
-              echo '    ou: '
-              echo '    >   `upk at`           (terminal)'
               echo
-              echo ' > Editar ficheiro das grelhas:'
-              echo '    > `upk at .   `   (com vim)     '
-              echo '    > `upk at . em`   (com emacs)    '
+              echo ' > Pesquisar AT (com menu fzf): `upk . RET 2 RET`'
+              echo ' >     "     "  (com terminal): `upk at`'
+              echo ' >     "     "  (com terminal): `upk at <pesquisa>`'
+              echo
+              echo ' > Editar grelhas (com vim):   `upk at .`'
+              echo ' >   "       "    (com emacs): `upk at . em`'
               echo
 }
 
