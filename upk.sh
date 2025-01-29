@@ -115,6 +115,7 @@ function f_AT_tutorial {
               echo
               echo ' > Pesquisar AT (com menu fzf): `upk . RET 2 RET`'
               echo ' >     "     "  (com terminal): `upk at`'
+              echo ' >     "     "  (com terminal): `upk at fzf`'
               echo ' >     "     "  (com terminal): `upk at <pesquisa>`'
               echo
               echo ' > Editar grelhas (com vim):   `upk at .`'
@@ -151,6 +152,24 @@ function f_variables_about_at {
    v_at_file=$v_repo_of_at_list/$v_at_file_inside_repo
 }
 
+function f_AT_list_fzf {
+   # Se quisermos editar ou visualizar a grelha inteira das AT do centro   
+
+   #f_AT_tutorial
+
+   if [[ -d ${v_REPOS_CENTER}/upK-diario-Dv/ ]]; then
+
+      # Para usar a fx "f_prsK" ou "f_press_Key_to_continue" tem de se definir uma msg antes, e chamar a fx depois
+         v_txt="A visualizar a lista de ATs do Vasco da Gama (com fzf)" 
+         f_prsK
+
+         cat ${v_REPOS_CENTER}/upK-diario-Dv/all/lista-at-vg.org | fzf -m --tac --prompt="SELECT (1 ou +): Lista de ATs VG: "
+
+   else
+      f_talk; echo "Erro: Falta repo upK-diario-Dv"
+              echo ' > Faz download com `D clone upkd`'
+   fi
+}
 
 function f_AT_list_edit_emacs {
    # Se quisermos editar ou visualizar a grelha inteira das AT do centro   
@@ -543,6 +562,10 @@ elif [ $1 == "at" ] || [ $1 == "AT" ] || [ $1 == "At" ]; then
       fi
 
 
+
+   elif [ $2 == "fzf" ] || [ $2 == "f" ]; then
+      # Visualizar ficheiro de grelhas com AT com menu fzf
+      f_AT_list_fzf
 
    elif [ $2 == "h" ]; then
       # Help Fx
