@@ -132,7 +132,7 @@ function f_AT_list_edit_vim {
       # Se o ficheiro existir, é editado
 
       # Para usar a fx "f_prsK" ou "f_press_Key_to_continue" tem de se definir uma msg antes, e chamar a fx depois
-         v_txt="A visualizar/editar a lista de ATs do Vasco da Gama (com vim)" 
+         v_txt="A ver/editar a lista de ATs do Vasco da Gama (com vim)" 
          f_prsK
 
       # Editar o ficheiro
@@ -160,7 +160,7 @@ function f_AT_list_fzf {
    if [[ -d ${v_REPOS_CENTER}/upK-diario-Dv/ ]]; then
 
       # Para usar a fx "f_prsK" ou "f_press_Key_to_continue" tem de se definir uma msg antes, e chamar a fx depois
-         v_txt="A visualizar a lista de ATs do Vasco da Gama (com fzf)" 
+         v_txt="A ver a lista de ATs do Vasco da Gama (com fzf)" 
          f_prsK
 
          cat ${v_REPOS_CENTER}/upK-diario-Dv/all/lista-at-vg.org | fzf -m --tac --prompt="SELECT (1 ou +): Lista de ATs VG: "
@@ -179,7 +179,7 @@ function f_AT_list_edit_emacs {
    if [[ -d ${v_REPOS_CENTER}/upK-diario-Dv/ ]]; then
 
       # Para usar a fx "f_prsK" ou "f_press_Key_to_continue" tem de se definir uma msg antes, e chamar a fx depois
-         v_txt="A visualizar/editar a lista de ATs do Vasco da Gama (com emacs)" 
+         v_txt="A ver/editar a lista de ATs do Vasco da Gama (com emacs)" 
          f_prsK
 
       emacs ${v_REPOS_CENTER}/upK-diario-Dv/all/lista-at-vg.org
