@@ -75,16 +75,18 @@ function f_talk {
    f_rc
 }
 
-function f_prsK {
+function f_anyK {
    # Press Any key to continue
    # Or wait X seconds
+
+   # uDev: Use the drya-lib-4 instead
 
    
    # A variavel $v_txt tem de ser definida antes desta fx ser chamada
       # EXEMPLO:
       #
       # v_txt="Vai ser de seguida editado o ficheiro X"
-      # f_prsK
+      # f_anyK
 
 
    # Set how many seconds to wait before automatically continue
@@ -131,9 +133,9 @@ function f_AT_list_edit_vim {
    if [[ -d ${v_REPOS_CENTER}/upK-diario-Dv/ ]]; then
       # Se o ficheiro existir, é editado
 
-      # Para usar a fx "f_prsK" ou "f_press_Key_to_continue" tem de se definir uma msg antes, e chamar a fx depois
+      # Para usar a fx "f_anyK" ou "f_press_Key_to_continue" tem de se definir uma msg antes, e chamar a fx depois
          v_txt="A ver/editar a lista de ATs do Vasco da Gama (com vim)" 
-         f_prsK
+         f_anyK
 
       # Editar o ficheiro
          vim ${v_REPOS_CENTER}/upK-diario-Dv/all/lista-at-vg.org
@@ -159,9 +161,9 @@ function f_AT_list_fzf {
 
    if [[ -d ${v_REPOS_CENTER}/upK-diario-Dv/ ]]; then
 
-      # Para usar a fx "f_prsK" ou "f_press_Key_to_continue" tem de se definir uma msg antes, e chamar a fx depois
+      # Para usar a fx "f_anyK" ou "f_press_Key_to_continue" tem de se definir uma msg antes, e chamar a fx depois
          v_txt="A ver a lista de ATs do Vasco da Gama (com fzf)" 
-         f_prsK
+         f_anyK
 
          cat ${v_REPOS_CENTER}/upK-diario-Dv/all/lista-at-vg.org | fzf -m --tac --prompt="SELECT (1 ou +): Lista de ATs VG: "
 
@@ -178,9 +180,9 @@ function f_AT_list_edit_emacs {
 
    if [[ -d ${v_REPOS_CENTER}/upK-diario-Dv/ ]]; then
 
-      # Para usar a fx "f_prsK" ou "f_press_Key_to_continue" tem de se definir uma msg antes, e chamar a fx depois
+      # Para usar a fx "f_anyK" ou "f_press_Key_to_continue" tem de se definir uma msg antes, e chamar a fx depois
          v_txt="A ver/editar a lista de ATs do Vasco da Gama (com emacs)" 
-         f_prsK
+         f_anyK
 
       emacs ${v_REPOS_CENTER}/upK-diario-Dv/all/lista-at-vg.org
 
