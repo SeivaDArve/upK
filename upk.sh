@@ -595,6 +595,30 @@ elif [ $1 == "at" ] || [ $1 == "AT" ] || [ $1 == "At" ]; then
 
    fi
 
+elif [ $1 == "delta" ] || [ $1 == "deltas" ] || [ $1 == "alfa" ] || [ $1 == "alfas" ]; then
+   f_greet
+   f_talk; echo "Lista de Diretores + Alfas"
+           echo " > Ultima atualizacao: 11/11/2025"
+           echo
+   f_talk; echo "Lista de Diretores"
+           echo " > Delta 0: Dr.  Pedro Amaral      (Diretor do Centro)"
+           echo " > Delta 1: Dra. Luisa Sao Marcos  (Diretora Adjunta)"
+           echo " > Delta 2: Dra. Carina Martins    (Marketing)"
+           echo " > Delta 3: Eng. Sofia Rodrigues   (Seguranca, Limpeza)"
+           echo " > Delta 4: Eng. Joao Milheiro     (Manutencao)"
+           echo " > Delta 5:      Ana Santos        (Secretaria)"
+           echo " > Delta 6:      Cristina Lourenco (Recepcionista)"
+           echo " > Delta 7:      David Pires       (Assistente Manutencao, LMGE)"
+           echo " > Delta 8:      Sonia Rocha       (Auditoria)"
+           echo " > Delta 9:      Hugo Silva        (LMGE)"
+           echo
+   f_talk; echo "Lista de Alfas"
+           echo " > Alfa 1: Jorge Badalo" 
+           echo " > Alfa 2: Ricardo Silva" 
+           echo " > Alfa 3: Paulo Martins" 
+           echo " > Alfa 4: Ricardo Ferreira" 
+           echo " > Alfa 5: Paulo Pereira" 
+
 elif [ $1 == "range-dirs" ]; then
    f_range_dir_creator  # uDev: runs on Android and Windows, but not on Linux
 
