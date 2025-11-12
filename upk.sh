@@ -599,8 +599,9 @@ elif [ $1 == "delta" ] || [ $1 == "deltas" ] || [ $1 == "alfa" ] || [ $1 == "alf
    f_greet
    f_talk; echo "Lista de Diretores + Alfas"
            echo " > Ultima atualizacao: 11/11/2025"
+           echo ' > Comandos: `upk delta`; `upk alfa` (no singular e plural)'
            echo
-   f_talk; echo "Lista de Diretores"
+   f_talk; echo "Lista de Diretores:"
            echo " > Delta 0: Dr.  Pedro Amaral      (Diretor do Centro)"
            echo " > Delta 1: Dra. Luisa Sao Marcos  (Diretora Adjunta)"
            echo " > Delta 2: Dra. Carina Martins    (Marketing)"
@@ -612,7 +613,7 @@ elif [ $1 == "delta" ] || [ $1 == "deltas" ] || [ $1 == "alfa" ] || [ $1 == "alf
            echo " > Delta 8:      Sonia Rocha       (Auditoria)"
            echo " > Delta 9:      Hugo Silva        (LMGE)"
            echo
-   f_talk; echo "Lista de Alfas"
+   f_talk; echo "Lista de Alfas:"
            echo " > Alfa 1: Jorge Badalo" 
            echo " > Alfa 2: Ricardo Silva" 
            echo " > Alfa 3: Paulo Martins" 
