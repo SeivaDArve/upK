@@ -467,6 +467,12 @@ if [ -z "$*" ]; then
 elif [[ $1 == "h" ]]; then
    echo "Help is uDev"
 
+   echo
+   echo "Comandos: \`upk\`"
+   echo " | delta | Lista de diretores"
+   echo " | alfas | Lista de Alfas"
+   echo " |  at   | Script pesquisador de ATs"
+
 elif [[ $1 == "vim" ]]; then
       vim ${v_REPOS_CENTER}/$v_choosen_repo/dailyLog.org 
 
@@ -601,7 +607,7 @@ elif [ $1 == "delta" ] || [ $1 == "deltas" ] || [ $1 == "alfa" ] || [ $1 == "alf
            echo " > Ultima atualizacao: 11/11/2025"
            echo ' > Comandos: `upk delta`; `upk alfa` (no singular e plural)'
            echo
-   f_talk; echo "Lista de Diretores:"
+   f_talk; echo "Lista de Diretores (VG):"
            echo " > Delta 0: Dr.  Pedro Amaral      (Diretor do Centro)"
            echo " > Delta 1: Dra. Luisa Sao Marcos  (Diretora Adjunta)"
            echo " > Delta 2: Dra. Carina Martins    (Marketing)"
@@ -613,12 +619,16 @@ elif [ $1 == "delta" ] || [ $1 == "deltas" ] || [ $1 == "alfa" ] || [ $1 == "alf
            echo " > Delta 8:      Sonia Rocha       (Auditoria)"
            echo " > Delta 9:      Hugo Silva        (LMGE)"
            echo
-   f_talk; echo "Lista de Alfas:"
+   f_talk; echo "Lista de Alfas (VG):"
            echo " > Alfa 1: Jorge Badalo" 
            echo " > Alfa 2: Ricardo Silva" 
            echo " > Alfa 3: Paulo Martins" 
            echo " > Alfa 4: Ricardo Ferreira" 
            echo " > Alfa 5: Paulo Pereira" 
+           echo
+   f_talk; echo "Lista de Patroes (upk):"
+           echo " > Patrao: ... Quinás" 
+           echo " > Patroa: Catarina ..." 
 
 elif [ $1 == "range-dirs" ]; then
    f_range_dir_creator  # uDev: runs on Android and Windows, but not on Linux
