@@ -627,8 +627,10 @@ elif [ $1 == "delta" ] || [ $1 == "deltas" ] || [ $1 == "alfa" ] || [ $1 == "alf
            echo " > Alfa 5: Paulo Pereira" 
            echo
    f_talk; echo "Lista de Patroes (upk):"
-           echo " > Patrao: ... Quinás" 
-           echo " > Patroa: Catarina ..." 
+           echo " > Patrao:       ... Quinás" 
+           echo " > Patroa:       Catarina ..." 
+           echo " > Contabilista: Laura" 
+
 
 elif [ $1 == "range-dirs" ]; then
    f_range_dir_creator  # uDev: runs on Android and Windows, but not on Linux
