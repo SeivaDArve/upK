@@ -220,19 +220,17 @@ function f_diary_help {
    # Funtion that will run in case this repository "upK" does not find an external user repository (like the one upK-diario-Dv)
 
    f_greet
-   f_talk
-
-   echo "upK: No valid arguments were given"
-   echo " > When arguments are not given, if installed"
-   echo "   a separate repository will open "
-   echo "   That has a daily log of actvities (user specific)"
-   echo
-   echo " > If you want to use your user specific \"account\" here"
-   echo '   install your text file as: ${v_REPOS_CENTER}/your-diary-name-here'
-   echo
-   echo " > The standard log repo is: upK-diario-Dv"
-   echo "   You can download it by: drya clone upK-diario-Dv"
-   echo "   or: https://github.com/SeivaDArve/upK-diario-Dv.git"
+   f_talk; echo "Attempt to open 'diary' failed"
+           echo " > When 'diary' is installed and configured, the command"
+           echo '   `upk .` will open a separate repository with such diary'
+           echo "   That is usually used for daily log of actvities (user specific)"
+           echo
+           echo " > If you want to use your user specific \"account\" here"
+           echo '   install your text file as: ${v_REPOS_CENTER}/<your-diary-name-here>'
+           echo
+           echo " > The standard log repo is: upK-diario-Dv (but it is private to some user)"
+           echo "   You can download it by: drya clone upK-diario-Dv"
+           echo "   or: https://github.com/SeivaDArve/upK-diario-Dv.git"
 }
 
 
@@ -438,6 +436,36 @@ function f_diary_master {
          fi
 }
 
+function f_horario_de_barcos {
+   # Esta fx serve para mostrar no ecra, um webscrape do website que informa o horario dos proximos barcos trans Tejo
+
+   v_script=${v_REPOS_CENTER}/upK/all/bin/bash/webscraper-Barcos-e-CP/barcos.sh
+   bash $v_script
+}
+
+
+function f_display_Dev_credentials_for_siigo {
+   # Fx para imprimir credenciais de acesso ao website do siigo (caso esse ficheiro exista)
+   
+   # Ficheiro de credenciais do DEV deste software
+      v_dev_credentials_file=${v_REPOS_CENTER}/upK-diario-Dv/all/credenciais-siigo-Dv-VG.txt
+
+   f_greet
+   f_talk; echo "Listar credenciais de acesso de utilizadores Siigo (se eles as disponibilizaram)"
+           echo
+
+   if [[ -f $v_dev_credentials_file ]]; then
+      f_talk; echo "Credenciais do DEV original:"
+      cat $v_dev_credentials_file
+
+   else
+      f_talk; echo "Nao existe nenhumas disponibilizadas, instala as tuas"
+   fi
+}
+
+
+
+
 
 
 
@@ -453,7 +481,47 @@ function f_diary_master {
 
 
 
+
 if [ -z "$*" ]; then
+   # Menu principal fzf desta repo
+   
+   function f_stop_duplicates {
+      #f_stop_duplicates should be the uncut name
+      echo
+   }
+
+   # Lista de opcoes para o menu `fzf`
+      Lz1='CMD '; Lz2='upk'; Lz3="$Lz1\`$Lz2\`"; Lz4=$v_drya_fzf_menu_hist
+
+      L8="8. |   | Passagens de servico"
+      L7="7. |   | Registar/Consulstar horarios/escalas do VG"
+      L6="6. |   | Registar ENTRADA/SAIDA no VG"
+      L5="5. | b | Horario de Barcos (Softlusa)"
+      L4="4. |   | Credenciais SIIGO"
+      L3="3. |   | Abrir ficheiro 'diario' pre-definido"
+      L2="2. |   | Buscas na lista de ATs do Centro VG"
+      L1="1. Cancel"
+
+      Lh=$(echo -e "\nSoftware de apoio aos colegas upK\n ")
+      L0='REPO: upk: '
+      
+      #v_list=$(echo -e "$L1 \n$L2 \n$L3 \n\n$Lz3" | fzf --cycle --prompt="$L0")
+      #v_list=$(echo -e "$L1 \n$L2 \n$L3 \n$L4 \n$L5 \n\n$Lz3" | fzf --preview "echo history {}" --header="[Menu saved to: ... ](acess via: \`D ..\`)" -m --pointer=">" --border=rounded --header-first --cycle --prompt="$L0")
+      v_list=$(echo -e "$L1 \n$L2 \n$L3 \n$L4 \n$L5 \n$L6 \n$L7 \n$L8 \n\n$Lz3" | fzf --header="$Lh" --no-info -m --pointer=">" --border=rounded --header-first --cycle --prompt="$L0")
+
+   # Perceber qual foi a escolha da lista
+      [[ $v_list =~ $Lz3  ]] && echo "$Lz2" >> $Lz4
+      [[ $v_list =~ "8. " ]] && echo uDev
+      [[ $v_list =~ "7. " ]] && echo uDev
+      [[ $v_list =~ "6. " ]] && echo uDev
+      [[ $v_list =~ "5. " ]] && f_horario_de_barcos
+      [[ $v_list =~ "4. " ]] && f_display_Dev_credentials_for_siigo 
+      [[ $v_list =~ "3. " ]] && echo "Ficheiro de 'diario' pre-definido:" && echo " > $v_choosen_file"
+      [[ $v_list =~ "2. " ]] && f_search_AT && history -s "upk at"
+      [[ $v_list =~ "1. " ]] && echo "Canceled: $Lz2"
+      unset v_list
+
+elif [ $1 == "." ]; then
    # open diary (stored on a separate repository) on purpose
    
    if [ -f ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file ]; then
@@ -463,7 +531,7 @@ if [ -z "$*" ]; then
       # If file $v_choosen_repo does not exist, then:
          f_diary_help
    fi
-
+    
 elif [[ $1 == "h" ]]; then
    echo "Help is uDev"
 
@@ -510,38 +578,8 @@ elif [ $1 == "img" ]; then
 elif [ $1 == "clone-drya" ]; then
    echo "uDev: cloning repo DRYa"
 
-elif [ $1 == "." ]; then
-   # Menu principal fzf desta repo
-   
-   function f_stop_duplicates {
-      #f_stop_duplicates should be the uncut name
-      echo
-   }
-
-   # Lista de opcoes para o menu `fzf`
-      Lz1='Save '; Lz2='upk .'; Lz3="$Lz1\`$Lz2\`"; Lz4=$v_drya_fzf_menu_hist
-
-      L7="7. Registar/Consulstar horario do VG"
-      L6="6. Registar ENTRADA/SAIDA no VG"
-      L5="5. Comboios CP"
-      L4="4. Credenciais SIIGO"
-      L3="3. Abrir ficheiro 'diario' pre-definido"
-      L2="2. Grep ATs do Centro VG"
-      L1="1. Cancel"
-      L0='REPO: upk: '
-      
-      #v_list=$(echo -e "$L1 \n$L2 \n$L3 \n\n$Lz3" | fzf --cycle --prompt="$L0")
-      v_list=$(echo -e "$L1 \n$L2 \n$L3 \n$L4 \n$L5 \n\n$Lz3" | fzf --preview "echo history {}" --header="[Menu saved to: ... ](acess via: \`D ..\`)" -m --pointer=">" --border=rounded --header-first --cycle --prompt="$L0")
-
-   # Perceber qual foi a escolha da lista
-      [[ $v_list =~ $Lz3  ]] && echo "$Lz2" >> $Lz4
-      [[ $v_list =~ "5. " ]] && echo "uDev" 
-      [[ $v_list =~ "4. " ]] && echo -e "Credenciais SIIGO Vasco da Gama: \n > david.rodrigues.vg@siigo.com \n > 'David Rodrigues VG'"
-      [[ $v_list =~ "3. " ]] && echo "uDev" && echo " > $v_choosen_file"
-      [[ $v_list =~ "2. " ]] && f_search_AT && history -s "upk at"
-      [[ $v_list =~ "1. " ]] && echo "Canceled: $Lz2"
-      unset v_list
-    
+elif [ $1 == "barcos" ] || [ $1 == "b" ] || [ $1 == "horario-barcos" ]; then
+   f_horario_de_barcos
 
 elif [ $1 == "at" ] || [ $1 == "AT" ] || [ $1 == "At" ]; then
    # Opcoes sobre ATs
