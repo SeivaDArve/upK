@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=1.0
+Name=Siigo
+GenericName=Atalho para Siigo
+Comment=Access to siigo-maintenance.com
+Exec=/usr/bin/chromium http://siigo-maintenance.com
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/home/vascogama/.config/h.h/upk/icons/siigo-icon.png
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml_xml;application/x-mimearchive;x-scheme-handler/http;x-scheme-handler/https;
+StartupWMClass=chromium
+StartupNotify=true
+Keywords=browser
