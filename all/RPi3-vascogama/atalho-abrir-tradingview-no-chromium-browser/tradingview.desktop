@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=1.0
+Name=TradingView
+GenericName=Atalho para TradingView
+Comment=Access to Tradinview on BTCUSDT.P asset
+Exec=/usr/bin/chromium https://www.tradingview.com/chart/?symbol=BINANCE%3ABTCUSDT.P 
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/home/vascogama/.config/h.h/upk/icons/tview-icon.png
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml_xml;application/x-mimearchive;x-scheme-handler/http;x-scheme-handler/https;
+StartupWMClass=chromium
+StartupNotify=true
+Keywords=browser
