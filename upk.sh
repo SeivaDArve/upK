@@ -494,7 +494,7 @@ if [ -z "$*" ]; then
       Lz1='CMD '; Lz2='upk'; Lz3="$Lz1\`$Lz2\`"; Lz4=$v_drya_fzf_menu_hist
 
       L8="8. |   | Passagens de servico"
-      L7="7. |   | Registar/Consulstar horarios/escalas do VG"
+      L7="7. |   | Registar/Consultar horarios/escalas do VG"
       L6="6. |   | Registar ENTRADA/SAIDA no VG"
       L5="5. | b | Horario de Barcos (Softlusa)"
       L4="4. |   | Credenciais SIIGO"
