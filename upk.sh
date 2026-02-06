@@ -463,7 +463,24 @@ function f_display_Dev_credentials_for_siigo {
    fi
 }
 
+function f_open_default_dailyLog {
+   if [ -f ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file ]; then
+      # If file $v_choosen_repo exists, then:
+         f_diary_master
+   else
+      # If file $v_choosen_repo does not exist, then:
+         f_diary_help
+   fi
+}
 
+function f_open_default_dailyLog_verbose {
+   # Before opening the file, mention it's name
+   echo "Ficheiro de 'diario' pre-definido:"
+   echo " > $v_choosen_file" 
+   echo
+   read -sn1 -t 2 -p " ... "
+   f_open_default_dailyLog 
+}
 
 
 
@@ -485,6 +502,10 @@ function f_display_Dev_credentials_for_siigo {
 if [ -z "$*" ]; then
    # Menu principal fzf desta repo
    
+   f_greet
+   f_talk; echo "A abrir Menu ..."
+           echo
+
    function f_stop_duplicates {
       #f_stop_duplicates should be the uncut name
       echo
@@ -498,7 +519,7 @@ if [ -z "$*" ]; then
       L6="6. |   | Registar ENTRADA/SAIDA no VG"
       L5="5. | b | Horario de Barcos (Softlusa)"
       L4="4. |   | Credenciais SIIGO"
-      L3="3. |   | Abrir ficheiro 'diario' pre-definido"
+      L3="3. | . | Abrir ficheiro 'diario' pre-definido"
       L2="2. |   | Buscas na lista de ATs do Centro VG"
       L1="1. Cancel"
 
@@ -516,7 +537,7 @@ if [ -z "$*" ]; then
       [[ $v_list =~ "6. " ]] && echo uDev
       [[ $v_list =~ "5. " ]] && f_horario_de_barcos
       [[ $v_list =~ "4. " ]] && f_display_Dev_credentials_for_siigo 
-      [[ $v_list =~ "3. " ]] && echo "Ficheiro de 'diario' pre-definido:" && echo " > $v_choosen_file"
+      [[ $v_list =~ "3. " ]] && f_open_default_dailyLog_verbose
       [[ $v_list =~ "2. " ]] && f_search_AT && history -s "upk at"
       [[ $v_list =~ "1. " ]] && echo "Canceled: $Lz2"
       unset v_list
@@ -524,17 +545,11 @@ if [ -z "$*" ]; then
 elif [ $1 == "." ]; then
    # open diary (stored on a separate repository) on purpose
    
-   if [ -f ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file ]; then
-      # If file $v_choosen_repo exists, then:
-         f_diary_master
-   else
-      # If file $v_choosen_repo does not exist, then:
-         f_diary_help
-   fi
+   f_open_default_dailyLog 
     
 elif [[ $1 == "h" ]]; then
-   echo "Help is uDev"
 
+   echo "Help is uDev"
    echo
    echo "Comandos: \`upk\`"
    echo " | delta | Lista de diretores"
