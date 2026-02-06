@@ -524,7 +524,7 @@ if [ -z "$*" ]; then
       L1="1. Cancel"
 
       Lh=$(echo -e "\nSoftware de apoio aos colegas upK\n ")
-      L0='REPO: upk: '
+      L0='upk: '
       
       #v_list=$(echo -e "$L1 \n$L2 \n$L3 \n\n$Lz3" | fzf --cycle --prompt="$L0")
       #v_list=$(echo -e "$L1 \n$L2 \n$L3 \n$L4 \n$L5 \n\n$Lz3" | fzf --preview "echo history {}" --header="[Menu saved to: ... ](acess via: \`D ..\`)" -m --pointer=">" --border=rounded --header-first --cycle --prompt="$L0")
