@@ -1,43 +1,48 @@
-# Como guardar o site dos barco mas em ficheiro local
+# Title: Barcos da Softlusa (webscraper dos horarios)
+# Description: Busca na net os horarios dos barcos em ambos os sentidos e imprime no terminal ja filtrado
+
+# Info `curl`: Como guardar o site dos barco mas em ficheiro local
    # -s significa 'silent'
    # -L significa ''
    # -H significa 'header'
    # -o significa 'output' ou seja, cria um ficheiro de saida com o nome que for dado como argumento seguinte
 
-   # drya-fast-tg-sys-vars
-      v_verbose=on
-      v_verbose=off
+# drya-fast-tg-sys-vars
+   v_verbose=on
+   v_verbose=off
 
-   function f_center {
-      texto="$1"
-      largura_terminal=$(tput cols)
-      largura_texto=${#texto}
-      espacos=$(( (largura_terminal - largura_texto) / 2 ))
+function f_center {
+   texto="$1"
+   largura_terminal=$(tput cols)
+   largura_texto=${#texto}
+   espacos=$(( (largura_terminal - largura_texto) / 2 ))
 
-      printf "%*s%s\n" $espacos "" "$texto"
-   }
+   printf "%*s%s\n" $espacos "" "$texto"
+}
 
-   function f_reset {
-      cat $v_output2 > $v_output
-      rm $v_output2
-   }
+function f_reset {
+   cat $v_output2 > $v_output
+   rm $v_output2
+}
 
-   v_dir=${v_REPOS_CENTER}/omni-log/all/cp/./
-   cd $v_dir
+# Ficheiros de saida (uDev: enviar para uma repo centralizada)
+   v_dir=${v_REPOS_CENTER}/omni-log/all/cp/
+    [[   -d $v_dir ]] && cd $v_dir 
+   #[[ ! -d $v_dir ]] && cd ~/tmp/out   # uDev: Criar um destino temporario caso $v_dir nao exista
    mkdir -p out
 
-   v_output=output.txt  # Sem filtro
-   v_output2=output2.txt  # Com tail
-   v_site="https://cp.pt/pt/pesquisa-estacao-detalhe/94-60038"
-   v_site="https://ttsl.pt/passageiros/horarios-de-ligacoes-fluviais/ligacao-barreiro-terreiro-do-paco/"
-   v_agent="User-Agent: Mozilla/5.0"
+v_output=output.txt  # Sem filtro
+v_output2=output2.txt  # Com tail
+v_site="https://cp.pt/pt/pesquisa-estacao-detalhe/94-60038"
+v_site="https://ttsl.pt/passageiros/horarios-de-ligacoes-fluviais/ligacao-barreiro-terreiro-do-paco/"
+v_agent="User-Agent: Mozilla/5.0"
 
-   clear
-   figlet Barcos
-   echo -n "A copiar o site a softlusa... "
-   curl -s -L -H "$v_agent" "$v_site" -o $v_output
-   echo
-   echo " > A filtrar horarios"
+clear
+figlet Barcos
+echo -n "A copiar o site a softlusa... "
+curl -s -L -H "$v_agent" "$v_site" -o $v_output
+echo
+echo " > A filtrar horarios"
 
 
 # Contar quantas linhas tem o doc

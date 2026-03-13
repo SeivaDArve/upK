@@ -603,8 +603,6 @@ elif [ $1 == "at" ] || [ $1 == "AT" ] || [ $1 == "At" ]; then
       # Pesquisa de ATs do Centro VG
       f_search_AT
 
-
-
    elif [ $2 == "." ]; then
       # Editar/Visualizar ficheiro de grelhas com AT
 
@@ -640,9 +638,16 @@ elif [ $1 == "at" ] || [ $1 == "AT" ] || [ $1 == "At" ]; then
       f_variables_about_at
 
       if [[ -d $v_repo_of_at_list ]]; then
+
          shift
+
+         f_greet
+         f_talk; echo -n "Em busca do texto: "
+           f_c2; echo "$*"
+           f_rc; echo
+
          for i in $*; do
-            sed "s/  \+/ /g" $v_at_file | grep --color=auto -i "$i"
+            sed "s/  \+/ /g" $v_at_file | grep --color=auto -i -- "$i"  # Info: nesta linha existe o arg `--` que indica o final das flags. Apartir da, todo o texto com hifen no inicio `-a` ja sera considerado texto e nao uma flag
             #f_search_AT
          done
 
