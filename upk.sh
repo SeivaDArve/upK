@@ -709,7 +709,7 @@ elif [ $1 == "-" ] || [ $1 == "saida" ]; then
 
 elif [ $1 == "grep" ]; then
    # Busca texto dentro do ficheiro dailyLog
-   
+   echo uDev
 
 else
    echo "upk: Arg nao reconhecido"
