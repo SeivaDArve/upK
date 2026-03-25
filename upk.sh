@@ -707,6 +707,10 @@ elif [ $1 == "-" ] || [ $1 == "saida" ]; then
    echo "bar" >> ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file
    vim ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file
 
+elif [ $1 == "grep" ]; then
+   # Busca texto dentro do ficheiro dailyLog
+   
+
 else
    echo "upk: Arg nao reconhecido"
    echo ' > Experimente `upk .`'
