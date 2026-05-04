@@ -683,6 +683,10 @@ elif [ $1 == "delta" ] || [ $1 == "deltas" ] || [ $1 == "alfa" ] || [ $1 == "alf
            echo " > Alfa 3: Paulo Martins" 
            echo " > Alfa 4: Ricardo Ferreira" 
            echo " > Alfa 5: Paulo Pereira" 
+           echo " >         Joao Guerreiro" 
+           echo
+   f_talk; echo "Lista de Limas (VG):"
+           echo " > Lucinda"
            echo
    f_talk; echo "Lista de Patroes (upk):"
            echo " > Patrao:       ... Quinás" 
