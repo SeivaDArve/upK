@@ -514,6 +514,7 @@ if [ -z "$*" ]; then
    # Lista de opcoes para o menu `fzf`
       Lz1='CMD '; Lz2='upk'; Lz3="$Lz1\`$Lz2\`"; Lz4=$v_drya_fzf_menu_hist
 
+      L9="9. |   | Abrir Siigo"
       L8="8. |   | Passagens de servico"
       L7="7. |   | Registar/Consultar horarios/escalas do VG"
       L6="6. |   | Registar ENTRADA/SAIDA no VG"
@@ -528,10 +529,11 @@ if [ -z "$*" ]; then
       
       #v_list=$(echo -e "$L1 \n$L2 \n$L3 \n\n$Lz3" | fzf --cycle --prompt="$L0")
       #v_list=$(echo -e "$L1 \n$L2 \n$L3 \n$L4 \n$L5 \n\n$Lz3" | fzf --preview "echo history {}" --header="[Menu saved to: ... ](acess via: \`D ..\`)" -m --pointer=">" --border=rounded --header-first --cycle --prompt="$L0")
-      v_list=$(echo -e "$L1 \n$L2 \n$L3 \n$L4 \n$L5 \n$L6 \n$L7 \n$L8 \n\n$Lz3" | fzf --header="$Lh" --no-info -m --pointer=">" --border=rounded --header-first --cycle --prompt="$L0")
+      v_list=$(echo -e "$L1 \n$L2 \n$L3 \n$L4 \n$L5 \n$L6 \n$L7 \n$L8 \n$L9 \n\n$Lz3" | fzf --header="$Lh" --no-info -m --pointer=">" --border=rounded --header-first --cycle --prompt="$L0")
 
    # Perceber qual foi a escolha da lista
       [[ $v_list =~ $Lz3  ]] && echo "$Lz2" >> $Lz4
+      [[ $v_list =~ "9. " ]] && echo uDev
       [[ $v_list =~ "8. " ]] && echo uDev
       [[ $v_list =~ "7. " ]] && echo uDev
       [[ $v_list =~ "6. " ]] && echo uDev
