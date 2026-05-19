@@ -514,34 +514,36 @@ if [ -z "$*" ]; then
    # Lista de opcoes para o menu `fzf`
       Lz1='CMD '; Lz2='upk'; Lz3="$Lz1\`$Lz2\`"; Lz4=$v_drya_fzf_menu_hist
 
-      L9="9. |   | Abrir Siigo"
-      L8="8. |   | Passagens de servico"
-      L7="7. |   | Registar/Consultar horarios/escalas do VG"
-      L6="6. |   | Registar ENTRADA/SAIDA no VG"
-      L5="5. | b | Horario de Barcos (Softlusa)"
-      L4="4. |   | Credenciais SIIGO"
-      L3="3. | . | Abrir ficheiro 'diario' pre-definido"
-      L2="2. |   | Buscas na lista de ATs do Centro VG"
-      L1="1. Cancel"
+      L10="10. |   | Print PASSWORD wifi Race (upk)"
+       L9="9.  |   | Abrir Siigo"
+       L8="8.  |   | Passagens de servico"
+       L7="7.  |   | Registar/Consultar horarios/escalas do VG"
+       L6="6.  |   | Registar ENTRADA/SAIDA no VG"
+       L5="5.  | b | Horario de Barcos (Softlusa)"
+       L4="4.  |   | Credenciais SIIGO"
+       L3="3.  | . | Abrir ficheiro 'diario' pre-definido"
+       L2="2.  |   | Buscas na lista de ATs do Centro VG"
+       L1="1.  Cancel"
 
       Lh=$(echo -e "\nSoftware de apoio aos colegas upK\n ")
       L0='upk: '
       
       #v_list=$(echo -e "$L1 \n$L2 \n$L3 \n\n$Lz3" | fzf --cycle --prompt="$L0")
       #v_list=$(echo -e "$L1 \n$L2 \n$L3 \n$L4 \n$L5 \n\n$Lz3" | fzf --preview "echo history {}" --header="[Menu saved to: ... ](acess via: \`D ..\`)" -m --pointer=">" --border=rounded --header-first --cycle --prompt="$L0")
-      v_list=$(echo -e "$L1 \n$L2 \n$L3 \n$L4 \n$L5 \n$L6 \n$L7 \n$L8 \n$L9 \n\n$Lz3" | fzf --header="$Lh" --no-info -m --pointer=">" --border=rounded --header-first --cycle --prompt="$L0")
+      v_list=$(echo -e "$L1 \n$L2 \n$L3 \n$L4 \n$L5 \n$L6 \n$L7 \n$L8 \n$L9 \n$L10 \n\n$Lz3" | fzf --header="$Lh" --no-info -m --pointer=">" --border=rounded --header-first --cycle --prompt="$L0")
 
    # Perceber qual foi a escolha da lista
-      [[ $v_list =~ $Lz3  ]] && echo "$Lz2" >> $Lz4
-      [[ $v_list =~ "9. " ]] && echo uDev
-      [[ $v_list =~ "8. " ]] && echo uDev
-      [[ $v_list =~ "7. " ]] && echo uDev
-      [[ $v_list =~ "6. " ]] && echo uDev
-      [[ $v_list =~ "5. " ]] && f_horario_de_barcos
-      [[ $v_list =~ "4. " ]] && f_display_Dev_credentials_for_siigo 
-      [[ $v_list =~ "3. " ]] && f_open_default_dailyLog_verbose
-      [[ $v_list =~ "2. " ]] && f_search_AT && history -s "upk at"
-      [[ $v_list =~ "1. " ]] && echo "Canceled: $Lz2"
+      [[ $v_list =~ $Lz3   ]] && echo "$Lz2" >> $Lz4
+      [[ $v_list =~ "10. " ]] && f_password_wifi_race_upk 
+      [[ $v_list =~ "9.  " ]] && echo uDev
+      [[ $v_list =~ "8.  " ]] && echo uDev
+      [[ $v_list =~ "7.  " ]] && echo uDev
+      [[ $v_list =~ "6.  " ]] && echo uDev
+      [[ $v_list =~ "5.  " ]] && f_horario_de_barcos
+      [[ $v_list =~ "4.  " ]] && f_display_Dev_credentials_for_siigo 
+      [[ $v_list =~ "3.  " ]] && f_open_default_dailyLog_verbose
+      [[ $v_list =~ "2.  " ]] && f_search_AT && history -s "upk at"
+      [[ $v_list =~ "1.  " ]] && echo "Canceled: $Lz2"
       unset v_list
 
 elif [ $1 == "." ]; then
