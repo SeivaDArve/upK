@@ -482,6 +482,12 @@ function f_open_default_dailyLog_verbose {
    f_open_default_dailyLog 
 }
 
+function f_criar_ot_temporaria {
+   # Criar OT temporaria, um ficheiro sera criado em $HOME
+
+   f_talk; echo "Vai ser anotada uma OT temporaria (para criar posteriormente)"
+   
+}
 
 
 
@@ -514,15 +520,16 @@ if [ -z "$*" ]; then
    # Lista de opcoes para o menu `fzf`
       Lz1='CMD '; Lz2='upk'; Lz3="$Lz1\`$Lz2\`"; Lz4=$v_drya_fzf_menu_hist
 
-      L10="10. |   | Print PASSWORD wifi Race (upk)"
-       L9="9.  |   | Abrir Siigo"
-       L8="8.  |   | Passagens de servico"
-       L7="7.  |   | Registar/Consultar horarios/escalas do VG"
-       L6="6.  |   | Registar ENTRADA/SAIDA no VG"
-       L5="5.  | b | Horario de Barcos (Softlusa)"
-       L4="4.  |   | Credenciais SIIGO"
-       L3="3.  | . | Abrir ficheiro 'diario' pre-definido"
-       L2="2.  |   | Buscas na lista de ATs do Centro VG"
+      L11="11. | ot | Anotar OT temporaria"
+      L10="10. |    | Print PASSWORD wifi Race (upk)"
+       L9="9.  |    | Abrir Siigo"
+       L8="8.  |    | Passagens de servico"
+       L7="7.  |    | Registar/Consultar horarios/escalas do VG"
+       L6="6.  |    | Registar ENTRADA/SAIDA no VG"
+       L5="5.  | b  | Horario de Barcos (Softlusa)"
+       L4="4.  |    | Credenciais SIIGO"
+       L3="3.  | .  | Abrir ficheiro 'diario' pre-definido"
+       L2="2.  |    | Buscas na lista de ATs do Centro VG"
        L1="1.  Cancel"
 
       Lh=$(echo -e "\nSoftware de apoio aos colegas upK\n ")
@@ -530,10 +537,11 @@ if [ -z "$*" ]; then
       
       #v_list=$(echo -e "$L1 \n$L2 \n$L3 \n\n$Lz3" | fzf --cycle --prompt="$L0")
       #v_list=$(echo -e "$L1 \n$L2 \n$L3 \n$L4 \n$L5 \n\n$Lz3" | fzf --preview "echo history {}" --header="[Menu saved to: ... ](acess via: \`D ..\`)" -m --pointer=">" --border=rounded --header-first --cycle --prompt="$L0")
-      v_list=$(echo -e "$L1 \n$L2 \n$L3 \n$L4 \n$L5 \n$L6 \n$L7 \n$L8 \n$L9 \n$L10 \n\n$Lz3" | fzf --header="$Lh" --no-info -m --pointer=">" --border=rounded --header-first --cycle --prompt="$L0")
+      v_list=$(echo -e "$L1 \n$L2 \n$L3 \n$L4 \n$L5 \n$L6 \n$L7 \n$L8 \n$L9 \n$L10 \n$L11 \n\n$Lz3" | fzf --header="$Lh" --no-info -m --pointer=">" --border=rounded --header-first --cycle --prompt="$L0")
 
    # Perceber qual foi a escolha da lista
       [[ $v_list =~ $Lz3   ]] && echo "$Lz2" >> $Lz4
+      [[ $v_list =~ "11. " ]] && f_criar_ot_temporaria
       [[ $v_list =~ "10. " ]] && f_password_wifi_race_upk 
       [[ $v_list =~ "9.  " ]] && echo uDev
       [[ $v_list =~ "8.  " ]] && echo uDev
@@ -719,6 +727,22 @@ elif [ $1 == "grep" ]; then
    # Busca texto dentro do ficheiro dailyLog
    echo uDev
 
+elif [ $1 == "ot" ]; then
+   # Anotar OT temporariamente
+   f_greet
+
+   if [ -z "$2" ]; then
+      v_concat_on_upkd=no
+
+   elif [ $2 == "upkd" ]; then
+      #echo ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file  # Debug
+      v_file_upkd=${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file 
+      [[ ! -f $v_file_upkd ]] && echo "upkd nao existe... abortar" && exit 1
+      v_concat_on_upkd=yes
+      echo suc
+   fi
+
+   f_criar_ot_temporaria 
 else
    echo "upk: Arg nao reconhecido"
    echo ' > Experimente `upk .`'
