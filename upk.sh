@@ -748,13 +748,31 @@ elif [ $1 == "cor" ] || [ $1 == "RAL" ] || [ $1 == "ral" ] || [ $1 == "sotinco" 
 
    v_ral=${v_REPOS_CENTER}/upK/all/Documentos/RAL-Sotinco.txt
 
+
+   # O iconv com //TRANSLIT converte caracteres acentuados para equivalentes ASCII aproximados:
+   #
+   #   á à â ã ä -> a
+   #   é è ê ë   -> e
+   #   ç         -> c
+   #
+   # Assim, "ação" passa a "acao".
+   #
+   # Depois o grep -i faz pesquisa ignorando maiúsculas/minúsculas.
+
+
    if [ -z "$2" ]; then
       f_greet
       cat $v_ral
    else
       f_greet
       f_talk; echo "Codigo de Cores RAL da Sotinco"
-      cat $v_ral | grep -i $2 --color=auto
+      #cat $v_ral | grep -i $2 --color=auto
+
+
+
+      iconv -f UTF-8 -t ASCII//TRANSLIT "$v_ral" | \
+      sed "s/'//g" | \
+      grep -i "$(printf '%s' "$2" | iconv -f UTF-8 -t ASCII//TRANSLIT)" --color=auto
    fi
          
 
