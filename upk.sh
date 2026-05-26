@@ -749,31 +749,33 @@ elif [ $1 == "cor" ] || [ $1 == "RAL" ] || [ $1 == "ral" ] || [ $1 == "sotinco" 
    v_ral=${v_REPOS_CENTER}/upK/all/Documentos/RAL-Sotinco.txt
 
 
-   # O iconv com //TRANSLIT converte caracteres acentuados para equivalentes ASCII aproximados:
-   #
-   #   á à â ã ä -> a
-   #   é è ê ë   -> e
-   #   ç         -> c
-   #
-   # Assim, "ação" passa a "acao".
-   #
-   # Depois o grep -i faz pesquisa ignorando maiúsculas/minúsculas.
-
-
    if [ -z "$2" ]; then
       f_greet
       cat $v_ral
    else
       f_greet
       f_talk; echo "Codigo de Cores RAL da Sotinco"
-      #cat $v_ral | grep -i $2 --color=auto
+
+      #cat $v_ral | grep -i $2 --color=auto  # Versao que nao reconhece "tráfego" quando se pesquisa o texto "trafego". Tem de ser substituido por 'iconv'
+
+      # O `iconv` com //TRANSLIT converte caracteres acentuados para equivalentes ASCII aproximados:
+      #
+      #   á à â ã ä -> a
+      #   é è ê ë   -> e
+      #   ç         -> c
+      #
+      # Assim pesquisar "ação" passa a "ac~ao".
+      #
+      # Depois com `sed` o texto "ac~ao" passa a "acao"
+      # Depois com `sed` o texto "p'erola" passa a "perola"
+      #
+      # Depois o grep -i faz pesquisa ignorando maiúsculas/minúsculas.
 
       iconv -f UTF-8 -t ASCII//TRANSLIT "$v_ral" | \
+      sed "s/~//g" | \
       sed "s/'//g" | \
       grep -i "$(printf '%s' "$2" | iconv -f UTF-8 -t ASCII//TRANSLIT)" --color=auto
    fi
-         
-
 
 else
    echo "upk: Arg nao reconhecido"
