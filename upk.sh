@@ -743,6 +743,19 @@ elif [ $1 == "ot" ]; then
    fi
 
    f_criar_ot_temporaria 
+
+elif [ $1 == "RAL" ]; then
+
+      v_ral=${v_REPOS_CENTER}/upK/all/Documentos/RAL-Sotinco.txt
+
+   if [ -z "$2" ]; then
+      cat $v_ral
+   else
+      cat $v_ral | grep -i $2 --color=auto
+   fi
+         
+
+
 else
    echo "upk: Arg nao reconhecido"
    echo ' > Experimente `upk .`'

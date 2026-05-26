@@ -1,0 +1,217 @@
+Codigo de cores RAL da Sotinco
+
+Código | RAL	| Nome
+------------------------------------------
+RAL    | 1000	| Bege esverdeado
+RAL    | 1001	| Bege
+RAL    | 1002	| Amarelo areia
+RAL    | 1003	| Amarelo sinalização
+RAL    | 1004	| Amarelo dourado
+RAL    | 1005	| Amarelo mel
+RAL    | 1006	| Amarelo milho
+RAL    | 1007	| Amarelo narciso
+RAL    | 1011	| Bege acastanhado
+RAL    | 1012	| Amarelo limão
+RAL    | 1013	| Branco pérola
+RAL    | 1014	| Marfim
+RAL    | 1015	| Marfim claro
+RAL    | 1016	| Amarelo enxofre
+RAL    | 1017	| Amarelo açafrão
+RAL    | 1018	| Amarelo zinco
+RAL    | 1019	| Bege acinzentado
+RAL    | 1020	| Amarelo oliva
+RAL    | 1021	| Amarelo colza
+RAL    | 1023	| Amarelo tráfego
+RAL    | 1024	| Amarelo ocre
+RAL    | 1026	| Amarelo luminoso
+RAL    | 1027	| Amarelo curry
+RAL    | 1028	| Amarelo melão
+RAL    | 1032	| Amarelo giesta
+RAL    | 1033	| Amarelo dália
+RAL    | 1034	| Amarelo pastel
+RAL    | 1035	| Bege pérola
+RAL    | 1036	| Ouro pérola
+RAL    | 1037	| Amarelo sol
+RAL    | 2000	| Laranja amarelo
+RAL    | 2001	| Laranja avermelhado
+RAL    | 2002	| Laranja sanguíneo
+RAL    | 2003	| Laranja pastel
+RAL    | 2004	| Laranja puro
+RAL    | 2005	| Laranja luminoso
+RAL    | 2007	| Laranja luminoso brilhante
+RAL    | 2008	| Laranja vivo brilhante
+RAL    | 2009	| Laranja tráfego
+RAL    | 2010	| Laranja sinalização
+RAL    | 2011	| Laranja profundo
+RAL    | 2012	| Laranja salmão
+RAL    | 2013	| Laranja pérola
+RAL    | 3000	| Vermelho fogo
+RAL    | 3001	| Vermelho sinalização
+RAL    | 3002	| Vermelho carmim
+RAL    | 3003	| Vermelho rubi
+RAL    | 3004	| Vermelho púrpura
+RAL    | 3005	| Vermelho vinho
+RAL    | 3007	| Vermelho negro
+RAL    | 3009	| Vermelho óxido
+RAL    | 3011	| Vermelho castanho
+RAL    | 3012	| Vermelho bege
+RAL    | 3013	| Vermelho tomate
+RAL    | 3014	| Rosa antigo
+RAL    | 3015	| Rosa claro
+RAL    | 3016	| Vermelho coral
+RAL    | 3017	| Rosa
+RAL    | 3018	| Vermelho morango
+RAL    | 3020	| Vermelho tráfego
+RAL    | 3022	| Vermelho salmão
+RAL    | 3024	| Vermelho luminoso
+RAL    | 3026	| Vermelho luminoso brilhante
+RAL    | 3027	| Vermelho framboesa
+RAL    | 3028	| Vermelho puro
+RAL    | 3031	| Vermelho oriental
+RAL    | 3032	| Vermelho pérola rubi
+RAL    | 3033	| Rosa pérola
+RAL    | 4001	| Lilás avermelhado
+RAL    | 4002	| Violeta avermelhado
+RAL    | 4003	| Violeta urze
+RAL    | 4004	| Violeta bordô
+RAL    | 4005	| Lilás azulado
+RAL    | 4006	| Violeta tráfego
+RAL    | 4007	| Violeta púrpura
+RAL    | 4008	| Violeta sinalização
+RAL    | 4009	| Violeta pastel
+RAL    | 4010	| Rosa telemagenta
+RAL    | 4011	| Violeta pérola
+RAL    | 4012	| Amora pérola
+RAL    | 5000	| Azul violeta
+RAL    | 5001	| Azul esverdeado
+RAL    | 5002	| Azul ultramar
+RAL    | 5003	| Azul safira
+RAL    | 5004	| Azul negro
+RAL    | 5005	| Azul sinalização
+RAL    | 5007	| Azul brilhante
+RAL    | 5008	| Azul acinzentado
+RAL    | 5009	| Azul celeste
+RAL    | 5010	| Azul genciana
+RAL    | 5011	| Azul aço
+RAL    | 5012	| Azul claro
+RAL    | 5013	| Azul cobalto
+RAL    | 5014	| Azul pombo
+RAL    | 5015	| Azul céu
+RAL    | 5017	| Azul tráfego
+RAL    | 5018	| Azul turquesa
+RAL    | 5019	| Azul capri
+RAL    | 5020	| Azul oceano
+RAL    | 5021	| Azul água
+RAL    | 5022	| Azul noite
+RAL    | 5023	| Azul distante
+RAL    | 5024	| Azul pastel
+RAL    | 5025	| Azul pérola genciana
+RAL    | 5026	| Azul pérola noite
+RAL    | 6000	| Verde pátina
+RAL    | 6001	| Verde esmeralda
+RAL    | 6002	| Verde folha
+RAL    | 6003	| Verde oliva
+RAL    | 6004	| Verde azulado
+RAL    | 6005	| Verde musgo
+RAL    | 6006	| Verde oliva acinzentado
+RAL    | 6007	| Verde garrafa
+RAL    | 6008	| Verde castanho
+RAL    | 6009	| Verde abeto
+RAL    | 6010	| Verde relva
+RAL    | 6011	| Verde reseda
+RAL    | 6012	| Verde negro
+RAL    | 6013	| Verde junco
+RAL    | 6014	| Verde oliva amarelado
+RAL    | 6015	| Verde negro oliva
+RAL    | 6016	| Verde turquesa
+RAL    | 6017	| Verde maio
+RAL    | 6018	| Verde amarelado
+RAL    | 6019	| Verde pastel
+RAL    | 6020	| Verde crómio
+RAL    | 6021	| Verde pálido
+RAL    | 6022	| Verde oliva castanho
+RAL    | 6024	| Verde tráfego
+RAL    | 6025	| Verde feto
+RAL    | 6026	| Verde opala
+RAL    | 6027	| Verde claro
+RAL    | 6028	| Verde pinheiro
+RAL    | 6029	| Verde menta
+RAL    | 6032	| Verde sinalização
+RAL    | 6033	| Turquesa menta
+RAL    | 6034	| Turquesa pastel
+RAL    | 6035	| Verde pérola
+RAL    | 6036	| Verde opala pérola
+RAL    | 6037	| Verde puro
+RAL    | 6038	| Verde luminoso
+RAL    | 7000	| Cinza esquilo
+RAL    | 7001	| Cinza prata
+RAL    | 7002	| Cinza oliva
+RAL    | 7003	| Cinza musgo
+RAL    | 7004	| Cinza sinalização
+RAL    | 7005	| Cinza rato
+RAL    | 7006	| Cinza bege
+RAL    | 7008	| Cinza cáqui
+RAL    | 7009	| Cinza esverdeado
+RAL    | 7010	| Cinza lona
+RAL    | 7011	| Cinza ferro
+RAL    | 7012	| Cinza basalto
+RAL    | 7013	| Cinza castanho
+RAL    | 7015	| Cinza ardósia
+RAL    | 7016	| Cinza antracite
+RAL    | 7021	| Cinza negro
+RAL    | 7022	| Cinza sombra
+RAL    | 7023	| Cinza betão
+RAL    | 7024	| Cinza grafite
+RAL    | 7026	| Cinza granito
+RAL    | 7030	| Cinza pedra
+RAL    | 7031	| Cinza azulado
+RAL    | 7032	| Cinza seixo
+RAL    | 7033	| Cinza cimento
+RAL    | 7034	| Cinza amarelado
+RAL    | 7035	| Cinza claro
+RAL    | 7036	| Cinza platina
+RAL    | 7037	| Cinza pó
+RAL    | 7038	| Cinza ágata
+RAL    | 7039	| Cinza quartzo
+RAL    | 7040	| Cinza janela
+RAL    | 7042	| Cinza tráfego A
+RAL    | 7043	| Cinza tráfego B
+RAL    | 7044	| Cinza seda
+RAL    | 7045	| Cinza tele
+RAL    | 7046	| Cinza tele 2
+RAL    | 7047	| Cinza tele 4
+RAL    | 7048	| Cinza rato pérola
+RAL    | 8000	| Castanho esverdeado
+RAL    | 8001	| Castanho ocre
+RAL    | 8002	| Castanho sinalização
+RAL    | 8003	| Castanho argila
+RAL    | 8004	| Castanho cobre
+RAL    | 8007	| Castanho fulvo
+RAL    | 8008	| Castanho oliva
+RAL    | 8011	| Castanho noz
+RAL    | 8012	| Castanho vermelho
+RAL    | 8014	| Castanho sépia
+RAL    | 8015	| Castanho castanha
+RAL    | 8016	| Castanho mogno
+RAL    | 8017	| Castanho chocolate
+RAL    | 8019	| Castanho cinzento
+RAL    | 8022	| Castanho negro
+RAL    | 8023	| Castanho alaranjado
+RAL    | 8024	| Castanho bege
+RAL    | 8025	| Castanho pálido
+RAL    | 8028	| Castanho terra
+RAL    | 8029	| Castanho pérola
+RAL    | 9001	| Branco creme
+RAL    | 9002	| Branco acinzentado
+RAL    | 9003	| Branco sinalização
+RAL    | 9004	| Preto sinalização
+RAL    | 9005	| Preto profundo
+RAL    | 9006	| Alumínio branco
+RAL    | 9007	| Alumínio cinzento
+RAL    | 9010	| Branco puro
+RAL    | 9011	| Preto grafite
+RAL    | 9016	| Branco tráfego
+RAL    | 9017	| Preto tráfego
+RAL    | 9018	| Branco papiro
+RAL    | 9022	| Cinza pérola claro
+RAL    | 9023	| Cinza pérola escuro
