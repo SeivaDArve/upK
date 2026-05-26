@@ -744,13 +744,16 @@ elif [ $1 == "ot" ]; then
 
    f_criar_ot_temporaria 
 
-elif [ $1 == "RAL" ]; then
+elif [ $1 == "cor" ] || [ $1 == "RAL" ] || [ $1 == "ral" ] || [ $1 == "sotinco" ]; then
 
-      v_ral=${v_REPOS_CENTER}/upK/all/Documentos/RAL-Sotinco.txt
+   v_ral=${v_REPOS_CENTER}/upK/all/Documentos/RAL-Sotinco.txt
 
    if [ -z "$2" ]; then
+      f_greet
       cat $v_ral
    else
+      f_greet
+      f_talk; echo "Codigo de Cores RAL da Sotinco"
       cat $v_ral | grep -i $2 --color=auto
    fi
          
