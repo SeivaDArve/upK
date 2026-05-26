@@ -768,8 +768,6 @@ elif [ $1 == "cor" ] || [ $1 == "RAL" ] || [ $1 == "ral" ] || [ $1 == "sotinco" 
       f_talk; echo "Codigo de Cores RAL da Sotinco"
       #cat $v_ral | grep -i $2 --color=auto
 
-
-
       iconv -f UTF-8 -t ASCII//TRANSLIT "$v_ral" | \
       sed "s/'//g" | \
       grep -i "$(printf '%s' "$2" | iconv -f UTF-8 -t ASCII//TRANSLIT)" --color=auto
