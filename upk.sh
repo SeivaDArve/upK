@@ -1,6 +1,25 @@
 #!/bin/bash
+# Title:       | upk.sh
+# Description: | 
 
-# This is main Branch
+# Variables for Temporary OTs
+   v_tmp_local_directory=~/.config/h.h/upk
+   v_directory_for_temporary_OTs="OTs_temporarias"
+   v_boilerplate=${v_REPOS_CENTER}/DRYa/all/lib/boilerplates/drya-org-mode-header.org
+
+   v_OTs=$v_tmp_local_directory/$v_directory_for_temporary_OTs/
+   mkdir -p $v_OTs
+
+   v_user_default="$v_OTs/Default_user.org"
+   v_user__Dv="$v_OTs/David_Rodrigues.org"
+   v_user__Vini="$v_OTs/Marcus_Vinicius.org"
+   v_user__Gomes="$v_OTs/Pedro_Gomes.org"
+
+   [[ ! -f $v_user_default ]] && cp $v_boilerplate $v_user_default
+   [[ ! -f $v_user__Dv ]]     && cp $v_boilerplate $v_user__Dv
+   [[ ! -f $v_user__Vini ]]   && cp $v_boilerplate $v_user__Vini
+   [[ ! -f $v_user__Gomes ]]  && cp $v_boilerplate $v_user__Gomes
+
 
 # Change these values according to user-specific repos/infos/choosen nick/choosen files to make use of
    function f_file1 {
@@ -727,23 +746,6 @@ elif [ $1 == "grep" ]; then
    # Busca texto dentro do ficheiro dailyLog
    echo uDev
 
-elif [ $1 == "ot" ]; then
-   # Anotar OT temporariamente
-   f_greet
-
-   if [ -z "$2" ]; then
-      v_concat_on_upkd=no
-
-   elif [ $2 == "upkd" ]; then
-      #echo ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file  # Debug
-      v_file_upkd=${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file 
-      [[ ! -f $v_file_upkd ]] && echo "upkd nao existe... abortar" && exit 1
-      v_concat_on_upkd=yes
-      echo suc
-   fi
-
-   f_criar_ot_temporaria 
-
 elif [ $1 == "cor" ] || [ $1 == "RAL" ] || [ $1 == "ral" ] || [ $1 == "sotinco" ]; then
 
    v_ral=${v_REPOS_CENTER}/upK/all/Documentos/RAL-Sotinco.txt
@@ -776,6 +778,30 @@ elif [ $1 == "cor" ] || [ $1 == "RAL" ] || [ $1 == "ral" ] || [ $1 == "sotinco" 
       sed "s/'//g" | \
       grep -i "$(printf '%s' "$2" | iconv -f UTF-8 -t ASCII//TRANSLIT)" --color=auto
    fi
+
+elif [ $1 == "ot" ]; then
+   # Anotar OT temporariamente
+   f_greet
+   f_talk; echo "Opcoes de OTs temporarias"
+
+   if [ -z "$2" ]; then
+      v_concat_on_upkd=no
+
+   elif [ $2 == "upkd" ] || [ $2 == "David" ] || [ $2 == "dv" ]; then
+      #echo ${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file  # Debug
+      v_file_upkd=${v_REPOS_CENTER}/$v_choosen_repo/$v_choosen_file 
+      [[   -f $v_file_upkd ]] && f_open_default_dailyLog 
+      [[ ! -f $v_file_upkd ]] && echo "Repo upkd nao existe. Vai ser aberto um ficheiro temporario" 
+      [[ ! -f $v_file_upkd ]] && read -sn1 && echo && emacs $v_user__Dv
+      v_concat_on_upkd=yes
+      echo hit
+
+   elif [ $2 == "marcus" ] || [ $2 == "vini" ] || [ $2 == "Marcus" ]; then
+      [[ -f $v_user__Vini ]] && emacs $v_user__Vini
+
+   fi
+
+   f_criar_ot_temporaria 
 
 else
    echo "upk: Arg nao reconhecido"
