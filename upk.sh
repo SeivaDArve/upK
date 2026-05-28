@@ -547,16 +547,17 @@ if [ -z "$*" ]; then
        L6="6.  |    | Registar ENTRADA/SAIDA no VG"
        L5="5.  | b  | Horario de Barcos (Softlusa)"
        L4="4.  |    | Credenciais SIIGO"
-       L3="3.  | .  | Abrir ficheiro 'diario' pre-definido"
+
+      #L3="3.  | .  | Abrir ficheiro 'diario' pre-definido"
        L2="2.  |    | Buscas na lista de ATs do Centro VG"
        L1="1.  Cancel"
 
-      Lh=$(echo -e "\nSoftware de apoio aos colegas upK\n ")
-      L0='upk: '
+      Lh=$(echo -e "\nSoftware de apoio\n ")
+      L0='UPK: '
       
       #v_list=$(echo -e "$L1 \n$L2 \n$L3 \n\n$Lz3" | fzf --cycle --prompt="$L0")
       #v_list=$(echo -e "$L1 \n$L2 \n$L3 \n$L4 \n$L5 \n\n$Lz3" | fzf --preview "echo history {}" --header="[Menu saved to: ... ](acess via: \`D ..\`)" -m --pointer=">" --border=rounded --header-first --cycle --prompt="$L0")
-      v_list=$(echo -e "$L1 \n$L2 \n$L3 \n$L4 \n$L5 \n$L6 \n$L7 \n$L8 \n$L9 \n$L10 \n$L11 \n\n$Lz3" | fzf --header="$Lh" --no-info -m --pointer=">" --border=rounded --header-first --cycle --prompt="$L0")
+      v_list=$(echo -e "$L1 \n$L2 \n\n$L4 \n$L5 \n$L6 \n$L7 \n$L8 \n$L9 \n$L10 \n$L11 \n\n$Lz3" | fzf --header="$Lh" --no-info -m --pointer=">" --border=rounded --header-first --cycle --prompt="$L0")
 
    # Perceber qual foi a escolha da lista
       [[ $v_list =~ $Lz3   ]] && echo "$Lz2" >> $Lz4
